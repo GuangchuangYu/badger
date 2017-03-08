@@ -17,50 +17,43 @@ library("badger")
 ## Package Version
 
 + release version
-	- syntax: `r ''````
-	         badge_bioc_release("ggtree", "green")```
+	- syntax: `` ``r ''`r badge_bioc_release("ggtree", "green")` ``
 	- badge: `r badge_bioc_release("ggtree", "green")`
 + devel version
-	- syntax: `r ''````
-            badge_devel("guangchuangyu/ggtree", "blue")```
+	- syntax: `` ``r ''`r badge_devel("guangchuangyu/ggtree", "blue")` ``
 	- badge: `r badge_devel("guangchuangyu/ggtree", "blue")`
 
 ## Download stats
 
 + Total of total :)
-	- syntax: `r ''````
-             badge_bioc_download("clusterProfiler", "total", "blue","total")```
+	- syntax: `` ``r ''`r badge_bioc_download("clusterProfiler", "total", "blue",
+    "total")` ``
 	- badge: `r badge_bioc_download("clusterProfiler", "total", "blue",
     "total")`
 + Total of distinct IPs
-	- syntax: `r ''````
-             badge_bioc_download("clusterProfiler", "total", "blue")```
+	- syntax: `` ``r ''`r badge_bioc_download("clusterProfiler", "total", "blue")` ``
 	- badge: `r badge_bioc_download("clusterProfiler", "total", "blue")`
 + Monthly download of distinct IPs
-	- syntax: `r ''````
-             badge_bioc_download("clusterProfiler", "month", "green")```
+	- syntax: `` ``r ''`r badge_bioc_download("clusterProfiler", "month", "green")` ``
 	- badge: `r badge_bioc_download("clusterProfiler", "month", "green")`
 
 
 ## Impact
 
 + Altmetric score
-	- syntax: `r ''````
-            badge_altmetric("10533079", "green")```
+	- syntax: `` ``r ''`r badge_altmetric("10533079", "green")` ``
 	- badge: `r badge_altmetric("10533079", "green")`
 
 
 ## Academic
 + DOI
-	- syntax: `r ''````
-            badge_doi("10.1111/2041-210X.12628", "green")```
+	- syntax: `` ``r ''`r badge_doi("10.1111/2041-210X.12628", "green")` ``
 	- badge: `r badge_doi("10.1111/2041-210X.12628", "green")`
 
 ## Customize badge
 
-+ syntax: `r ''````
-          badge_custom("2nd most cited paper", "in OMICS", "blue",
-          "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")```
++ syntax: `` ``r ''`r badge_custom("2nd most cited paper", "in OMICS", "blue",
+  "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")` ``
 + badge: `r badge_custom("2nd most cited paper", "in OMICS", "blue",
   "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")`
 
