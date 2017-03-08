@@ -1,6 +1,6 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-badger: generate badge to be embeded in R repo
-==============================================
+badger: generate badge to be embeded in README or GitHub pages for R repo
+=========================================================================
 
 Package Version
 ---------------
