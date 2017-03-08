@@ -1,0 +1,67 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+html_preview: false
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# badger: generate badge to be embeded in R repo
+
+
+```{r echo=FALSE, results="hide", message=FALSE}
+library("badger")
+```
+
+## Package Version
+
++ release version
+	- syntax: `r ''````
+	         badge_bioc_release("ggtree", "green")```
+	- badge: `r badge_bioc_release("ggtree", "green")`
++ devel version
+	- syntax: `r ''```
+            badge_devel("guangchuangyu/ggtree", "blue")```
+	- badge: `r badge_devel("guangchuangyu/ggtree", "blue")`
+
+## Download stats
+
++ Total of total :)
+	- syntax: `r ''```
+             badge_bioc_download("clusterProfiler", "total", "blue",
+             "total")```
+	- badge: `r badge_bioc_download("clusterProfiler", "total", "blue",
+    "total")`
++ Total of distinct IPs
+	- syntax: `r ''```
+             badge_bioc_download("clusterProfiler", "total", "blue")```
+	- badge: `r badge_bioc_download("clusterProfiler", "total", "blue")`
++ Monthly download of distinct IPs
+	- syntax: `r ''```
+             badge_bioc_download("clusterProfiler", "month", "green")```
+	- badge: `r badge_bioc_download("clusterProfiler", "month", "green")`
+
+
+## Impact
+
++ Altmetric score
+	- syntax: `r ''```
+            badge_altmetric("10533079", "green")```
+	- badge: `r badge_altmetric("10533079", "green")`
+
+
+## Academic
++ DOI
+	- syntax: `r ''```
+            badge_doi("10.1111/2041-210X.12628", "green")```
+	- badge: `r badge_doi("10.1111/2041-210X.12628", "green")`
+
+## Customize badge
+
++ syntax: `r ''```
+          badge_custom("2nd most cited paper", "in OMICS", "blue",
+          "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")```
++ badge: `r badge_custom("2nd most cited paper", "in OMICS", "blue",
+  "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")`
+
