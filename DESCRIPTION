@@ -1,8 +1,8 @@
 Package: badger
 Title: Badge for R Package
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"))
-Description: Query information and generate badge that can be embeded in README
+Description: Query information and generate badge for using in README
     and GitHub Pages.
 Depends:
     R (>= 3.3.0)
