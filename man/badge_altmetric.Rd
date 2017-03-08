@@ -17,6 +17,9 @@ badge in markdown syntax
 \description{
 altmetric badge
 }
+\examples{
+badge_altmetric("2788597", "blue")
+}
 \author{
 Guangchuang
 }

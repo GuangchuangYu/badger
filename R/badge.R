@@ -174,6 +174,8 @@ badge_custom <- function(x, y, color, url=NULL) {
 ##' @param color color of badge
 ##' @return badge in markdown syntax
 ##' @author Guangchuang
+##' @examples
+##' badge_altmetric("2788597", "blue")
 ##' @export
 badge_altmetric <- function(id, color) {
     ## [![Altmetric](https://img.shields.io/badge/Altmetric-`r x <- readLines("https://www.altmetric.com/details/2788597"); gsub("^.*score=(\\d+)\\D+.*$", '\\1', x[grep("style=donut&score=", x)])`-blue.svg?style=flat)](https://www.altmetric.com/details/2788597)

@@ -17,6 +17,9 @@ rank
 \description{
 git award rank
 }
+\examples{
+gitaward('guangchuangyu', 'r')
+}
 \author{
 Guangchuang Yu
 }

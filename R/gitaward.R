@@ -7,6 +7,8 @@
 ##' @return rank
 ##' @author Guangchuang Yu
 ##' @export
+##' @examples
+##' gitaward('guangchuangyu', 'r')
 gitaward <- function(user="guangchuangyu", lang) {
     url <- paste0("http://git-awards.com/users/", user)
     x <- readLines(url)

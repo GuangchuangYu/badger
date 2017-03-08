@@ -1,5 +1,5 @@
 Package: badger
-Title: Badge for R package
+Title: Badge for R Package
 Version: 0.0.1
 Authors@R: person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"))
 Description: Query information and generate badge that can be embeded in README
@@ -11,6 +11,8 @@ Imports:
     rvcheck
 License: Artistic-2.0
 ByteCompile: true
+URL: https://github.com/GuangchuangYu/badger
+BugReports: https://github.com/GuangchuangYu/badger/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
