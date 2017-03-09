@@ -9,12 +9,9 @@
 ##' @author Guangchuang Yu
 ##' @importFrom rvcheck check_bioc
 badge_bioc_release <- function(pkg, color) {
-    p1 <- "[![releaseVersion](https://img.shields.io/badge/release%20version-"
     v <- check_bioc(pkg)$latest_version
     url <- paste0("https://bioconductor.org/packages/", pkg)
-    p2 <- ".svg?style=flat)]("
-    badge <- paste0(p1, v, "-", color, p2, url, ")")
-    return(badge)
+    badge_custom("release version", v, color, url)
 }
 
 
@@ -28,12 +25,9 @@ badge_bioc_release <- function(pkg, color) {
 ##' @export
 ##' @author Guangchuang Yu
 badge_github_version <- function(pkg, color) {
-    p1 <- "[![develVersion](https://img.shields.io/badge/devel%20version-"
     v <- ver_devel(pkg)
-    p2 <- ".svg?style=flat)]("
     url <- paste0("https://github.com/", pkg)
-    badge <- paste0(p1, v, "-", color, p2, url, ")")
-    return(badge)
+    badge_custom("devel version", v, color, url)
 }
 
 ##' badge of devel version
@@ -55,24 +49,23 @@ badge_devel <- badge_github_version
 ##' @importFrom rvcheck check_github
 ##' @export
 ver_devel <- function (pkg) {
-    flag <- FALSE
-    if (file.exists("DESCRIPTION")) {
-        x <- readLines("DESCRIPTION")
-        flag <- TRUE
-    } else if (file.exists("../DESCRIPTION")) {
-        x <- readLines("../DESCRIPTION")
-        flag <- TRUE
-    }
-    if (flag) {
-        y <- x[grep("^Version", x)]
-        v <- sub("Version: ", "", y)
-        if ((as.numeric(gsub("\\d+\\.(\\d+)\\.\\d+", "\\1", v))%%2) ==
-            1) {
-            return(v)
-        }
-    }
+    ## flag <- FALSE
+    ## if (file.exists("DESCRIPTION")) {
+    ##     x <- readLines("DESCRIPTION")
+    ##     flag <- TRUE
+    ## } else if (file.exists("../DESCRIPTION")) {
+    ##     x <- readLines("../DESCRIPTION")
+    ##     flag <- TRUE
+    ## }
+    ## if (flag) {
+    ##     y <- x[grep("^Version", x)]
+    ##     v <- sub("Version: ", "", y)
+    ##     if ((as.numeric(gsub("\\d+\\.(\\d+)\\.\\d+", "\\1", v))%%2) == 1) {
+    ##         return(v)
+    ##     }
+    ## }
 
-    return(check_github(pkg)$latest_version)
+    check_github(pkg)$latest_version
 }
 
 ##' badge of bioconductor download number
@@ -102,13 +95,10 @@ badge_bioc_download <- function(pkg, by, color, type="distinct") {
     } else if (by == "month") {
         res <- nb[length(nb) -1]
     }
+    res <- paste0(res, "/", by)
 
     url <- paste0("https://bioconductor.org/packages/stats/bioc/", pkg)
-
-    p1 <- paste0("[![", by, "](https://img.shields.io/badge/downloads-")
-    p2 <- paste0(res, "/", by, "-", color, ".svg?style=flat)](", url, ")")
-    badge <- paste0(p1, p2)
-    return(badge)
+    badge_custom("download", res, color, url)
 }
 
 ##' official Bioconductor download badge
@@ -135,14 +125,11 @@ badge_download_bioc <- function(pkg) {
 ##' @return badge
 ##' @author Guangchuang
 ##' @export
+##' @examples
+##' badge_doi("10.1111/2041-210X.12628", "green")
 badge_doi <- function(doi, color) {
     url <- paste0("http://dx.doi.org/",doi)
-    p1 <- "[![doi](https://img.shields.io/badge/doi-"
-    p2 <- ".svg?style=flat)]("
-
-    doi <- gsub('-', '--', doi)
-    badge <- paste0(p1, doi, "-", color, p2, url, ")")
-    return(badge)
+    badge_custom("doi", doi, color, url)
 }
 
 ##' custom badge
@@ -159,6 +146,8 @@ badge_doi <- function(doi, color) {
 badge_custom <- function(x, y, color, url=NULL) {
     x <- gsub(" ", "%20", x)
     y <- gsub(" ", "%20", y)
+    x <- gsub('-', '--', x)
+    y <- gsub('-', '--', y)
     badge <- paste0("![](https://img.shields.io/badge/", x, "-", y, "-", color, ".svg?style=flat)")
     if (is.null(url))
         return(badge)
@@ -178,12 +167,9 @@ badge_custom <- function(x, y, color, url=NULL) {
 ##' badge_altmetric("2788597", "blue")
 ##' @export
 badge_altmetric <- function(id, color) {
-    ## [![Altmetric](https://img.shields.io/badge/Altmetric-`r x <- readLines("https://www.altmetric.com/details/2788597"); gsub("^.*score=(\\d+)\\D+.*$", '\\1', x[grep("style=donut&score=", x)])`-blue.svg?style=flat)](https://www.altmetric.com/details/2788597)
     url <- paste0("https://www.altmetric.com/details/", id)
-    p1 <- "[![Altmetric](https://img.shields.io/badge/Altmetric-"
     x <- readLines(url)
     score <- gsub("^.*score=(\\d+)\\D+.*$", '\\1', x[grep("style=donut&score=", x)])
-    p2 <- paste0("-", color, ".svg?style=flat)](")
-    badge <- paste0(p1, score, p2, url, ")")
-    return(badge)
+    badge_custom("Altmetric", score, color, url)
 }
+

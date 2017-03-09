@@ -66,8 +66,8 @@ devtools::install_github("GuangchuangYu/badger")
 	- badge: `r badge_bioc_download("clusterProfiler", "total", "blue",
     "total")`
 + Total of distinct IPs
-	- syntax: `` ``r ''`r badge_bioc_download("clusterProfiler", "total", "blue")` ``
-	- badge: `r badge_bioc_download("clusterProfiler", "total", "blue")`
+	- syntax: `` ``r ''`r badge_bioc_download("clusterProfiler", "total", "yellow")` ``
+	- badge: `r badge_bioc_download("clusterProfiler", "total", "yellow")`
 + Monthly download of distinct IPs
 	- syntax: `` ``r ''`r badge_bioc_download("clusterProfiler", "month", "green")` ``
 	- badge: `r badge_bioc_download("clusterProfiler", "month", "green")`
@@ -82,8 +82,8 @@ devtools::install_github("GuangchuangYu/badger")
 
 ### Academic
 + DOI
-	- syntax: `` ``r ''`r badge_doi("10.1111/2041-210X.12628", "green")` ``
-	- badge: `r badge_doi("10.1111/2041-210X.12628", "green")`
+	- syntax: `` ``r ''`r badge_doi("10.1111/2041-210X.12628", "yellow")` ``
+	- badge: `r badge_doi("10.1111/2041-210X.12628", "yellow")`
 
 ### Customize badge
 
