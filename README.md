@@ -1,9 +1,40 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-badger: generate badge to be embeded in README or GitHub pages for R repo
-=========================================================================
+badger: Badge for R Package
+===========================
 
-Package Version
----------------
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/badger?color=green)](https://cran.r-project.org/package=badger) ![](http://cranlogs.r-pkg.org/badges/grand-total/badger?color=green) ![](http://cranlogs.r-pkg.org/badges/badger?color=green) ![](http://cranlogs.r-pkg.org/badges/last-week/badger?color=green)
+
+Query information and generate badge for using in README and GitHub Pages.
+
+Author
+------
+
+Guangchuang YU <https://guangchuangyu.github.io>
+
+School of Public Health, The University of Hong Kong
+
+Installation
+------------
+
+Get the released version from CRAN:
+
+``` r
+install.packages("badger")
+```
+
+Or the development version from github:
+
+``` r
+## install.packages("devtools")
+devtools::install_github("GuangchuangYu/badger")
+```
+
+------------------------------------------------------------------------
+
+Examples
+--------
+
+### Package Version
 
 -   release version
     -   syntax: `` `r badge_bioc_release("ggtree", "green")` ``
@@ -12,8 +43,7 @@ Package Version
     -   syntax: `` `r badge_devel("guangchuangyu/ggtree", "blue")` ``
     -   badge: [![develVersion](https://img.shields.io/badge/devel%20version-1.7.9-blue.svg?style=flat)](https://github.com/guangchuangyu/ggtree)
 
-Download stats
---------------
+### Download stats
 
 -   Total of total :)
     -   syntax: `` `r badge_bioc_download("clusterProfiler", "total", "blue", "total")` ``
@@ -25,22 +55,19 @@ Download stats
     -   syntax: `` `r badge_bioc_download("clusterProfiler", "month", "green")` ``
     -   badge: [![month](https://img.shields.io/badge/downloads-1401/month-green.svg?style=flat)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
 
-Impact
-------
+### Impact
 
 -   Altmetric score
     -   syntax: `` `r badge_altmetric("10533079", "green")` ``
     -   badge: [![Altmetric](https://img.shields.io/badge/Altmetric-352-green.svg?style=flat)](https://www.altmetric.com/details/10533079)
 
-Academic
---------
+### Academic
 
 -   DOI
     -   syntax: `` `r badge_doi("10.1111/2041-210X.12628", "green")` ``
     -   badge: [![doi](https://img.shields.io/badge/doi-10.1111/2041--210X.12628-green.svg?style=flat)](http://dx.doi.org/10.1111/2041-210X.12628)
 
-Customize badge
----------------
+### Customize badge
 
 -   syntax: `` `r badge_custom("2nd most cited paper", "in OMICS", "blue",   "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")` ``
 -   badge: [![](https://img.shields.io/badge/2nd%20most%20cited%20paper-in%20OMICS-blue.svg?style=flat)](http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi)
