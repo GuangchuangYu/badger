@@ -173,3 +173,18 @@ badge_altmetric <- function(id, color) {
     badge_custom("Altmetric", score, color, url)
 }
 
+##' SCI citation badge
+##'
+##'
+##' @title badge_sci_citation
+##' @param url Web of Science url
+##' @param color color of badge
+##' @return badge in markdown syntax
+##' @author Guangchuang
+##' @export
+badge_sci_citation <- function(url, color) {
+    x <- suppressWarnings(readLines(url))
+    cites <- sub("\\D+(\\d+)\\D+", "\\1", x[grep("Times Cited$", x)])
+    badge_custom("cited in Web of Science Core Collection", cites, color, url)
+}
+
