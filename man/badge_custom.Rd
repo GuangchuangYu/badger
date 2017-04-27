@@ -24,4 +24,3 @@ custom badge
 \author{
 Guangchuang Yu
 }
-

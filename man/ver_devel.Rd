@@ -18,4 +18,3 @@ get devel version number of specific package
 \author{
 Guangchuang
 }
-

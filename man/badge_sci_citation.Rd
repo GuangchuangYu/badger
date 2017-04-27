@@ -20,4 +20,3 @@ SCI citation badge
 \author{
 Guangchuang
 }
-

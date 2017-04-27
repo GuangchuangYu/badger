@@ -17,4 +17,3 @@ badge in markdown syntax
 \description{
 badge of devel version
 }
-

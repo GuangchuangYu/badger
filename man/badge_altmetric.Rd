@@ -23,4 +23,3 @@ badge_altmetric("2788597", "blue")
 \author{
 Guangchuang
 }
-

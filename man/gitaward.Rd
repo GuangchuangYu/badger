@@ -20,4 +20,3 @@ git award rank
 \author{
 Guangchuang Yu
 }
-

@@ -20,4 +20,3 @@ badge of devel version
 \author{
 Guangchuang Yu
 }
-

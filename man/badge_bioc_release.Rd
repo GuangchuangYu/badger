@@ -20,4 +20,3 @@ badge of bioconductor release version
 \author{
 Guangchuang Yu
 }
-
