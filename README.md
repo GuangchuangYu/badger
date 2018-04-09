@@ -40,34 +40,34 @@ Examples
 
 -   release version
     -   syntax: `` `r badge_bioc_release("ggtree", "green")` ``
-    -   badge: [![releaseVersion](https://img.shields.io/badge/release%20version-1.10.5-green.svg?style=flat)](https://bioconductor.org/packages/ggtree)
+    -   badge: [![](https://img.shields.io/badge/release%20version-1.10.5-green.svg?style=flat)](https://bioconductor.org/packages/ggtree)
 -   devel version
     -   syntax: `` `r badge_devel("guangchuangyu/ggtree", "blue")` ``
-    -   badge: [![develVersion](https://img.shields.io/badge/devel%20version-1.11.6-blue.svg?style=flat)](https://github.com/guangchuangyu/ggtree)
+    -   badge: [![](https://img.shields.io/badge/devel%20version-1.11.6-blue.svg?style=flat)](https://github.com/guangchuangyu/ggtree)
 
 ### Download stats
 
 -   Total of total :)
     -   syntax: `` `r badge_bioc_download("clusterProfiler", "total", "blue", "total")` ``
-    -   badge: [![total](https://img.shields.io/badge/downloads-124972/total-blue.svg?style=flat)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+    -   badge: [![](https://img.shields.io/badge/download-124972/total-blue.svg?style=flat)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
 -   Total of distinct IPs
     -   syntax: `` `r badge_bioc_download("clusterProfiler", "total", "yellow")` ``
-    -   badge: [![total](https://img.shields.io/badge/downloads-64306/total-yellow.svg?style=flat)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+    -   badge: [![](https://img.shields.io/badge/download-64306/total-yellow.svg?style=flat)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
 -   Monthly download of distinct IPs
     -   syntax: `` `r badge_bioc_download("clusterProfiler", "month", "green")` ``
-    -   badge: [![month](https://img.shields.io/badge/downloads-2821/month-green.svg?style=flat)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+    -   badge: [![](https://img.shields.io/badge/download-2821/month-green.svg?style=flat)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
 
 ### Impact
 
 -   Altmetric score
     -   syntax: `` `r badge_altmetric("10533079", "green")` ``
-    -   badge: [![Altmetric](https://img.shields.io/badge/Altmetric-327-green.svg?style=flat)](https://www.altmetric.com/details/10533079)
+    -   badge: [![](https://img.shields.io/badge/Altmetric-327-green.svg?style=flat)](https://www.altmetric.com/details/10533079)
 
 ### Academic
 
 -   DOI
     -   syntax: `` `r badge_doi("10.1111/2041-210X.12628", "yellow")` ``
-    -   badge: [![doi](https://img.shields.io/badge/doi-10.1111/2041--210X.12628-yellow.svg?style=flat)](http://dx.doi.org/10.1111/2041-210X.12628)
+    -   badge: [![](https://img.shields.io/badge/doi-10.1111/2041--210X.12628-yellow.svg?style=flat)](http://dx.doi.org/10.1111/2041-210X.12628)
 
 ### Customize badge
 

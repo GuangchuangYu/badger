@@ -148,11 +148,11 @@ badge_custom <- function(x, y, color, url=NULL) {
     y <- gsub(" ", "%20", y)
     x <- gsub('-', '--', x)
     y <- gsub('-', '--', y)
-    badge <- paste0("![](https://img.shields.io/badge/", x, "-", y, "-", color, ".svg?style=flat)")
+    badge <- paste0("![](https://img.shields.io/badge/", x, "-", y, "-", color, ".svg)")
     if (is.null(url))
         return(badge)
 
-    paste("[", badge, "](", url, ")")
+    paste0("[", badge, "](", url, ")")
 }
 
 ##' altmetric badge
