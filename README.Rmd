@@ -30,6 +30,11 @@ Guangchuang YU <https://guangchuangyu.github.io>
 
 School of Public Health, The University of Hong Kong
 
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/GuangchuangYu)
+`r badger::badge_custom("follow me on", "微信", "green", "https://guangchuangyu.github.io/blog_images/biobabble.jpg")`
+`r badger::badge_custom("打赏", "支付宝/微信", "green", "https://guangchuangyu.github.io/blog_images/pay_qrcode.png")`
+
+
 ## Installation
 
 Get the released version from CRAN:
@@ -81,14 +86,15 @@ devtools::install_github("GuangchuangYu/badger")
 
 
 ### Academic
+
 + DOI
 	- syntax: `` ``r ''`r badge_doi("10.1111/2041-210X.12628", "yellow")` ``
 	- badge: `r badge_doi("10.1111/2041-210X.12628", "yellow")`
 
 ### Customize badge
 
-+ syntax: `` ``r ''`r badge_custom("2nd most cited paper", "in OMICS", "blue",
++ syntax: `` ``r ''`r badge_custom("1st most cited paper", "in OMICS", "blue",
   "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")` ``
-+ badge: `r badge_custom("2nd most cited paper", "in OMICS", "blue",
++ badge: `r badge_custom("1st most cited paper", "in OMICS", "blue",
   "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")`
 
