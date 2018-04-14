@@ -128,7 +128,7 @@ badge_download_bioc <- function(pkg) {
 ##' @examples
 ##' badge_doi("10.1111/2041-210X.12628", "green")
 badge_doi <- function(doi, color) {
-    url <- paste0("http://dx.doi.org/",doi)
+    url <- paste0("https://doi.org/",doi)
     badge_custom("doi", doi, color, url)
 }
 
