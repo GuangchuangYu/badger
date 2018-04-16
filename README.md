@@ -67,7 +67,7 @@ Examples
 
 -   DOI
     -   syntax: `` `r badge_doi("10.1111/2041-210X.12628", "yellow")` ``
-    -   badge: [![](https://img.shields.io/badge/doi-10.1111/2041--210X.12628-yellow.svg?style=flat)](http://dx.doi.org/10.1111/2041-210X.12628)
+    -   badge: [![](https://img.shields.io/badge/doi-10.1111/2041--210X.12628-yellow.svg?style=flat)](https://doi.org/10.1111/2041-210X.12628)
 
 ### Customize badge
 
