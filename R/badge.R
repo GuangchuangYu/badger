@@ -10,7 +10,7 @@
 ##' @importFrom rvcheck check_bioc
 badge_bioc_release <- function(pkg, color) {
     v <- check_bioc(pkg)$latest_version
-    url <- paste0("https://bioconductor.org/packages/", pkg)
+    url <- paste0("https://www.bioconductor.org/packages/", pkg)
     badge_custom("release version", v, color, url)
 }
 
