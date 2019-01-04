@@ -113,8 +113,8 @@ devtools::install_github("GuangchuangYu/badger")
 	- syntax: `` ``r ''`r badge_travis("rstudio/rmarkdown")` ``
 	- badge: `r badge_travis("rstudio/rmarkdown")`
 + coveralls code coverage
-	- syntax: `` ``r ''`r badge_coveralls("sdcTools/sdcMicro")` ``
-	- badge: `r badge_coveralls("sdcTools/sdcMicro")`
+	- syntax: `` ``r ''`r badge_coveralls("google/benchmark")` ``
+	- badge: `r badge_coveralls("google/benchmark")`
 + code size
 	- syntax: `` ``r ''`r badge_code_size("GuangchuangYu/badger")` ``
 	- badge: `r badge_code_size("GuangchuangYu/badger")`

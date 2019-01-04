@@ -89,8 +89,8 @@ Examples
     -   syntax: `` `r badge_travis("rstudio/rmarkdown")` ``
     -   badge: [![](https://travis-ci.org/rstudio/rmarkdown.svg?branch=master)](https://travis-ci.org/rstudio/rmarkdown)
 -   coveralls code coverage
-    -   syntax: `` `r badge_coveralls("sdcTools/sdcMicro")` ``
-    -   badge: [![](https://coveralls.io/repos/github/sdcTools/sdcMicro/badge.svg?branch=master)](https://coveralls.io/repos/github/sdcTools/sdcMicro)
+    -   syntax: `` `r badge_coveralls("google/benchmark")` ``
+    -   badge: [![](https://coveralls.io/repos/github/google/benchmark/badge.svg?branch=master)](https://coveralls.io/repos/github/google/benchmark)
 -   code size
     -   syntax: `` `r badge_code_size("GuangchuangYu/badger")` ``
     -   badge: [![](https://img.shields.io/github/languages/code-size/GuangchuangYu/badger.svg)](https://github.com/GuangchuangYu/badger)
