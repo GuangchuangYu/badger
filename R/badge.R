@@ -192,7 +192,7 @@ badge_sci_citation <- function(url, color) {
 ##'
 ##'
 ##' @title badge_lifcycle
-##' @param status lifecycle status. See \link{https://www.tidyverse.org/lifecycle/}
+##' @param status lifecycle status. See \href{https://www.tidyverse.org/lifecycle/}{https://www.tidyverse.org/lifecycle/}
 ##' @param color color of badge
 ##' @return badge in markdown syntax
 ##' @export
@@ -249,13 +249,14 @@ badge_code_size <- function(ref) {
 ##' badge of CRAN version
 ##'
 ##'
-##' @title badge_cran
+##' @title badge_cran_release
 ##' @param pkg package
+##' @param color color of badge
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_cran_release <- function(pkg) {
-  svg <- paste0("https://www.r-pkg.org/badges/version/", pkg)
+badge_cran_release <- function(pkg, color) {
+  svg <- paste0("https://www.r-pkg.org/badges/version/", pkg, "?color=", color)
   url <- paste0("https://cran.r-project.org/package=", pkg)
   placeholder <- "CRAN link"
   paste0("[![](", svg, ")](", url, ")")
@@ -281,11 +282,15 @@ badge_coveralls <- function(ref) {
 ##'
 ##' @title badge_cran_download
 ##' @param pkg package
+##' @param type type of stats. \code{last-month}, \code{last-week} or \code{"grand-total"}
+##' @param color color of badge
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_cran_download <- function(pkg) {
-  svg <- paste0("http://cranlogs.r-pkg.org/badges/", pkg)
+badge_cran_download <- function(pkg, type = c("last-month", "last-week", "grand-total"),
+																color = "green") {
+	type <- match.arg(type)
+  svg <- paste0("http://cranlogs.r-pkg.org/badges/", type, "/", pkg, "?color=", color)
   url <- paste0("https://cran.r-project.org/package=", pkg)
   placeholder <- "CRAN link"
   paste0("[![](", svg, ")](", url, ")")

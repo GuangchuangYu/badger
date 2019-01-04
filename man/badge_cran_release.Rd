@@ -2,12 +2,14 @@
 % Please edit documentation in R/badge.R
 \name{badge_cran_release}
 \alias{badge_cran_release}
-\title{badge_cran}
+\title{badge_cran_release}
 \usage{
-badge_cran_release(pkg)
+badge_cran_release(pkg, color)
 }
 \arguments{
 \item{pkg}{package}
+
+\item{color}{color of badge}
 }
 \value{
 badge in markdown syntax

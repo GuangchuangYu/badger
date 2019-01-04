@@ -7,7 +7,7 @@
 badge_lifecycle(status = "experimental", color)
 }
 \arguments{
-\item{status}{lifecycle status. See \link{https://www.tidyverse.org/lifecycle/}}
+\item{status}{lifecycle status. See \href{https://www.tidyverse.org/lifecycle/}{https://www.tidyverse.org/lifecycle/}}
 
 \item{color}{color of badge}
 }

@@ -4,10 +4,15 @@
 \alias{badge_cran_download}
 \title{badge_cran_download}
 \usage{
-badge_cran_download(pkg)
+badge_cran_download(pkg, type = c("last-month", "last-week",
+  "grand-total"), color = "green")
 }
 \arguments{
 \item{pkg}{package}
+
+\item{type}{type of stats. \code{last-month}, \code{last-week} or \code{"grand-total"}}
+
+\item{color}{color of badge}
 }
 \value{
 badge in markdown syntax

@@ -7,22 +7,22 @@ html_preview: false
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# badger: Badge for R Package
-
-
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/badger?color=green)](https://cran.r-project.org/package=badger)
-![](http://cranlogs.r-pkg.org/badges/grand-total/badger?color=green)
-![](http://cranlogs.r-pkg.org/badges/badger?color=green)
-![](http://cranlogs.r-pkg.org/badges/last-week/badger?color=green)
-
-
-Query information and generate badge for using in README and GitHub Pages.
-
-
 ```{r echo=FALSE, results="hide", message=FALSE}
 library("badger")
 ```
 
+# badger: Badge for R Package
+
+```{r, echo = FALSE, results='asis'}
+cat(
+	badge_cran_release("badger", "green"),
+	badge_cran_download("badger", "grand-total", "green"),
+	badge_cran_download("badger", "last-month", "green"),
+	badge_cran_download("badger", "last-week", "green")
+)
+```
+
+Query information and generate badge for using in README and GitHub Pages.
 
 ## Author
 
@@ -60,13 +60,13 @@ devtools::install_github("GuangchuangYu/badger")
 	- syntax: `` ``r ''`r badge_bioc_release("ggtree", "green")` ``
 	- badge: `r badge_bioc_release("ggtree", "green")`
 + release version (CRAN)
-	- syntax: `` ``r ''`r badge_cran("badger")` ``
-	- badge: `r badge_cran_release("badger")` 
+	- syntax: `` ``r ''`r badge_cran("badger", "orange")` ``
+	- badge: `r badge_cran_release("badger", "orange")` 
 + devel version
 	- syntax: `` ``r ''`r badge_devel("guangchuangyu/ggtree", "blue")` ``
 	- badge: `r badge_devel("guangchuangyu/ggtree", "blue")`
 
-### Download stats
+### Download stats for bioconductor
 
 + Total of total :)
 	- syntax: `` ``r ''`r badge_bioc_download("clusterProfiler", "total", "blue",
@@ -79,9 +79,18 @@ devtools::install_github("GuangchuangYu/badger")
 + Monthly download of distinct IPs
 	- syntax: `` ``r ''`r badge_bioc_download("clusterProfiler", "month", "green")` ``
 	- badge: `r badge_bioc_download("clusterProfiler", "month", "green")`
-+ Downloads from CRAN
-    - syntax: `` ``r ''`r badge_cran_download("badger")` ``
-    - badge: `r badge_cran_download("badger")`
+	
+### Download stats for CRAN
+	
++ Total downloads
+	- syntax: `` ``r ''`r badge_cran_download("badger", "grand-total", "blue")` ``
+	- badge: `r badge_cran_download("badger", "grand-total", "blue")`
++ Monthly Downloads
+	- syntax: `` ``r ''`r badge_cran_download("badger", "last-month", "green")` ``
+	- badge: `r badge_cran_download("badger", "last-month", "green")`
++ Weekly Downloads
+	- syntax: `` ``r ''`r badge_cran_download("badger", "last-week", "yellow")` ``
+	- badge: `r badge_cran_download("badger", "last-week", "yellow")`
 
 
 ### Impact

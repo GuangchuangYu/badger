@@ -2,7 +2,7 @@
 badger: Badge for R Package
 ===========================
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/badger?color=green)](https://cran.r-project.org/package=badger) ![](http://cranlogs.r-pkg.org/badges/grand-total/badger?color=green) ![](http://cranlogs.r-pkg.org/badges/badger?color=green) ![](http://cranlogs.r-pkg.org/badges/last-week/badger?color=green)
+[![](https://www.r-pkg.org/badges/version/badger?color=green)](https://cran.r-project.org/package=badger) [![](http://cranlogs.r-pkg.org/badges/grand-total/badger?color=green)](https://cran.r-project.org/package=badger) [![](http://cranlogs.r-pkg.org/badges/last-month/badger?color=green)](https://cran.r-project.org/package=badger) [![](http://cranlogs.r-pkg.org/badges/last-week/badger?color=green)](https://cran.r-project.org/package=badger)
 
 Query information and generate badge for using in README and GitHub Pages.
 
@@ -42,13 +42,13 @@ Examples
     -   syntax: `` `r badge_bioc_release("ggtree", "green")` ``
     -   badge: [![](https://img.shields.io/badge/release%20version-1.14.4-green.svg)](https://www.bioconductor.org/packages/ggtree)
 -   release version (CRAN)
-    -   syntax: `` `r badge_cran("badger")` ``
-    -   badge: [![](https://www.r-pkg.org/badges/version/badger)](https://cran.r-project.org/package=badger)
+    -   syntax: `` `r badge_cran("badger", "orange")` ``
+    -   badge: [![](https://www.r-pkg.org/badges/version/badger?color=orange)](https://cran.r-project.org/package=badger)
 -   devel version
     -   syntax: `` `r badge_devel("guangchuangyu/ggtree", "blue")` ``
     -   badge: [![](https://img.shields.io/badge/devel%20version-1.15.3-blue.svg)](https://github.com/guangchuangyu/ggtree)
 
-### Download stats
+### Download stats for bioconductor
 
 -   Total of total :)
     -   syntax: `` `r badge_bioc_download("clusterProfiler", "total", "blue", "total")` ``
@@ -59,9 +59,18 @@ Examples
 -   Monthly download of distinct IPs
     -   syntax: `` `r badge_bioc_download("clusterProfiler", "month", "green")` ``
     -   badge: [![](https://img.shields.io/badge/download-4015/month-green.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
--   Downloads from CRAN
-    -   syntax: `` `r badge_cran_download("badger")` ``
-    -   badge: [![](http://cranlogs.r-pkg.org/badges/badger)](https://cran.r-project.org/package=badger)
+
+### Download stats for CRAN
+
+-   Total downloads
+    -   syntax: `` `r badge_cran_download("badger", "grand-total", "blue")` ``
+    -   badge: [![](http://cranlogs.r-pkg.org/badges/grand-total/badger?color=blue)](https://cran.r-project.org/package=badger)
+-   Monthly Downloads
+    -   syntax: `` `r badge_cran_download("badger", "last-month", "green")` ``
+    -   badge: [![](http://cranlogs.r-pkg.org/badges/last-month/badger?color=green)](https://cran.r-project.org/package=badger)
+-   Weekly Downloads
+    -   syntax: `` `r badge_cran_download("badger", "last-week", "yellow")` ``
+    -   badge: [![](http://cranlogs.r-pkg.org/badges/last-week/badger?color=yellow)](https://cran.r-project.org/package=badger)
 
 ### Impact
 
