@@ -56,9 +56,12 @@ devtools::install_github("GuangchuangYu/badger")
 
 ### Package Version
 
-+ release version
++ release version (bioconductor)
 	- syntax: `` ``r ''`r badge_bioc_release("ggtree", "green")` ``
 	- badge: `r badge_bioc_release("ggtree", "green")`
++ release version (CRAN)
+	- syntax: `` ``r ''`r badge_cran("badger")` ``
+	- badge: `r badge_cran_release("badger")` 
 + devel version
 	- syntax: `` ``r ''`r badge_devel("guangchuangyu/ggtree", "blue")` ``
 	- badge: `r badge_devel("guangchuangyu/ggtree", "blue")`
@@ -76,6 +79,9 @@ devtools::install_github("GuangchuangYu/badger")
 + Monthly download of distinct IPs
 	- syntax: `` ``r ''`r badge_bioc_download("clusterProfiler", "month", "green")` ``
 	- badge: `r badge_bioc_download("clusterProfiler", "month", "green")`
++ Downloads from CRAN
+    - syntax: `` ``r ''`r badge_cran_download("badger")` ``
+    - badge: `r badge_cran_download("badger")`
 
 
 ### Impact
@@ -97,4 +103,21 @@ devtools::install_github("GuangchuangYu/badger")
   "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")` ``
 + badge: `r badge_custom("1st most cited paper", "in OMICS", "blue",
   "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")`
+  
+### Development
 
++ Lifecycle
+	- syntax: `` ``r ''`r badge_lifecycle("maturing", "blue")` ``
+	- badge: `r badge_lifecycle("maturing", "blue")`
++ travis build-status
+	- syntax: `` ``r ''`r badge_travis("rstudio/rmarkdown")` ``
+	- badge: `r badge_travis("rstudio/rmarkdown")`
++ coveralls code coverage
+	- syntax: `` ``r ''`r badge_coveralls("sdcTools/sdcMicro")` ``
+	- badge: `r badge_coveralls("sdcTools/sdcMicro")`
++ code size
+	- syntax: `` ``r ''`r badge_code_size("GuangchuangYu/badger")` ``
+	- badge: `r badge_code_size("GuangchuangYu/badger")`
++ last commit date
+	- syntax: `` ``r ''`r badge_last_commit("GuangchuangYu/badger")` ``
+	- badge: `r badge_last_commit("GuangchuangYu/badger")`
