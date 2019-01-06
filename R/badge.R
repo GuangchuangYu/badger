@@ -200,9 +200,9 @@ badge_sci_citation <- function(url, color) {
 badge_lifecycle <- function(stage = "experimental", color = NULL) {
   url <- paste0("https://www.tidyverse.org/lifecycle/#", stage)
   if (is.null(color))
-  	color <- switch(stage, experimental = "orange", maturing = "blue", stable = "brightgreen",
-  									retired = "orange", archived = "red", dormant = "blue", questioning = "blue",
-  									stop("invalid stage: ", stage))
+    color <- switch(stage, experimental = "orange", maturing = "blue", stable = "brightgreen",
+                    retired = "orange", archived = "red", dormant = "blue", questioning = "blue",
+                    stop("invalid stage: ", stage))
   badge_custom("lifecycle", stage, color, url)
 }
 
