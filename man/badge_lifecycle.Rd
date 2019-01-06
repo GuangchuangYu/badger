@@ -4,12 +4,12 @@
 \alias{badge_lifecycle}
 \title{badge_lifcycle}
 \usage{
-badge_lifecycle(status = "experimental", color)
+badge_lifecycle(stage = "experimental", color = NULL)
 }
 \arguments{
-\item{status}{lifecycle status. See \href{https://www.tidyverse.org/lifecycle/}{https://www.tidyverse.org/lifecycle/}}
+\item{stage}{lifecycle stage See \href{https://www.tidyverse.org/lifecycle/}{https://www.tidyverse.org/lifecycle/}}
 
-\item{color}{color of badge}
+\item{color}{color of the badge. If missing, the color is determined by the stage.}
 }
 \value{
 badge in markdown syntax
