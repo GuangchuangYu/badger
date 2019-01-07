@@ -188,3 +188,114 @@ badge_sci_citation <- function(url, color) {
     badge_custom("cited in Web of Science Core Collection", cites, color, url)
 }
 
+##' lifecycle badge
+##'
+##'
+##' @title badge_lifcycle
+##' @param stage lifecycle stage See \href{https://www.tidyverse.org/lifecycle/}{https://www.tidyverse.org/lifecycle/}
+##' @param color color of the badge. If missing, the color is determined by the stage.
+##' @return badge in markdown syntax
+##' @export
+##' @author Gregor de Cillia
+badge_lifecycle <- function(stage = "experimental", color = NULL) {
+  url <- paste0("https://www.tidyverse.org/lifecycle/#", stage)
+  if (is.null(color))
+    color <- switch(stage, experimental = "orange", maturing = "blue", stable = "brightgreen",
+                    retired = "orange", archived = "red", dormant = "blue", questioning = "blue",
+                    stop("invalid stage: ", stage))
+  badge_custom("lifecycle", stage, color, url)
+}
+
+##' last commit badge
+##'
+##'
+##' @title badge_last_commit
+##' @param ref Reference for a GitHub repository
+##' @return badge in markdown syntax
+##' @export
+##' @author Gregor de Cillia
+badge_last_commit <- function(ref) {
+  url <- paste0("https://github.com/", ref, "/commits/master")
+  svg <- paste0("https://img.shields.io/github/last-commit/", ref, ".svg")
+  paste0("[![](", svg, ")](", url, ")")
+}
+
+##' reavis-ci badge
+##'
+##'
+##' @title badge_travis
+##' @param ref Reference for a GitHub repository
+##' @return badge in markdown syntax
+##' @export
+##' @author Gregor de Cillia
+badge_travis <- function(ref) {
+  svg <- paste0("https://travis-ci.org/", ref, ".svg?branch=master")
+  url <- paste0("https://travis-ci.org/", ref)
+  paste0("[![](", svg, ")](", url, ")")
+}
+
+##' badge of GitHub code size
+##'
+##'
+##' @title badge_code_size
+##' @param ref Reference for a GitHub repository
+##' @return badge in markdown syntax
+##' @export
+##' @author Gregor de Cillia
+badge_code_size <- function(ref) {
+  svg <- paste0("https://img.shields.io/github/languages/code-size/",
+                ref, ".svg")
+  url <- paste0("https://github.com/", ref)
+  placeholder <- "GitHub code size in bytes"
+  paste0("[![](", svg, ")](", url, ")")
+}
+
+##' badge of CRAN version
+##'
+##'
+##' @title badge_cran_release
+##' @param pkg package
+##' @param color color of badge
+##' @return badge in markdown syntax
+##' @export
+##' @author Gregor de Cillia
+badge_cran_release <- function(pkg, color) {
+  svg <- paste0("https://www.r-pkg.org/badges/version/", pkg, "?color=", color)
+  url <- paste0("https://cran.r-project.org/package=", pkg)
+  placeholder <- "CRAN link"
+  paste0("[![](", svg, ")](", url, ")")
+}
+
+##' badge of CRAN release version
+##'
+##'
+##' @title badge_coveralls
+##' @param ref Reference for a GitHub repository
+##' @return badge in markdown syntax
+##' @export
+##' @author Gregor de Cillia
+badge_coveralls <- function(ref) {
+  svg = paste0("https://coveralls.io/repos/github/", ref, "/badge.svg?branch=master")
+  url <- paste0("https://coveralls.io/repos/github/", ref)
+  placeholder <- "coveralls link"
+  paste0("[![](", svg, ")](", url, ")")
+}
+
+##' badge of CRAN downloads
+##'
+##'
+##' @title badge_cran_download
+##' @param pkg package
+##' @param type type of stats. \code{last-month}, \code{last-week} or \code{"grand-total"}
+##' @param color color of badge
+##' @return badge in markdown syntax
+##' @export
+##' @author Gregor de Cillia
+badge_cran_download <- function(pkg, type = c("last-month", "last-week", "grand-total"),
+																color = "green") {
+	type <- match.arg(type)
+  svg <- paste0("http://cranlogs.r-pkg.org/badges/", type, "/", pkg, "?color=", color)
+  url <- paste0("https://cran.r-project.org/package=", pkg)
+  placeholder <- "CRAN link"
+  paste0("[![](", svg, ")](", url, ")")
+}
