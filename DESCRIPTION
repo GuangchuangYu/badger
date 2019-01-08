@@ -1,7 +1,10 @@
 Package: badger
 Title: Badge for R Package
 Version: 0.0.4
-Authors@R: person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"))
+Authors@R: c(
+  person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre")),
+  person("Gregor", "de Cillia", email = "de.cillia.gregor@gmail.com", role = "ctb")
+)
 Description: Query information and generate badge for using in README
     and GitHub Pages.
 Depends:
