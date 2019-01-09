@@ -3,7 +3,7 @@ Title: Badge for R Package
 Version: 0.0.5
 Authors@R: c(
            person("Guangchuang", "Yu",    email = "guangchuangyu@gmail.com",    role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781")),
-  	       person("Gregor", "de Cillia",  email = "de.cillia.gregor@gmail.com", role = "ctb"),
+  	person("Gregor", "de Cillia",  email = "de.cillia.gregor@gmail.com", role = "ctb"),
            person("Dirk", "Eddelbuettel", email = "edd@debian.org", role = "ctb")
            )
 Description: Query information and generate badge for using in README
