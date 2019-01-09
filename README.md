@@ -9,9 +9,10 @@ Query information and generate badge for using in README and GitHub Pages.
 Author
 ------
 
+
 Guangchuang YU <https://guangchuangyu.github.io>
 
-School of Public Health, The University of Hong Kong
+School of Basic Medical Sciences, Southern Medical University
 
 [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/GuangchuangYu) [![](https://img.shields.io/badge/follow%20me%20on-微信-green.svg)](https://guangchuangyu.github.io/blog_images/biobabble.jpg) [![](https://img.shields.io/badge/打赏-支付宝/微信-green.svg)](https://guangchuangyu.github.io/blog_images/pay_qrcode.png)
 
@@ -106,3 +107,6 @@ Examples
 -   last commit date
     -   syntax: `` `r badge_last_commit("GuangchuangYu/badger")` ``
     -   badge: [![](https://img.shields.io/github/last-commit/GuangchuangYu/badger.svg)](https://github.com/GuangchuangYu/badger/commits/master)
+-   direct and recursive dependencies (for CRAN pkgs)
+    -   syntax: `` `r badge_dependencies("badger")` ``
+    -   badge: [![Dependencies](https://tinyverse.netlify.com/badge/badger)](https://cran.r-project.org/package=badger)

@@ -28,7 +28,7 @@ Query information and generate badge for using in README and GitHub Pages.
 
 Guangchuang YU <https://guangchuangyu.github.io>
 
-School of Public Health, The University of Hong Kong
+School of Basic Medical Sciences, Southern Medical University
 
 [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/GuangchuangYu)
 `r badger::badge_custom("follow me on", "微信", "green", "https://guangchuangyu.github.io/blog_images/biobabble.jpg")`
@@ -130,3 +130,6 @@ devtools::install_github("GuangchuangYu/badger")
 + last commit date
 	- syntax: `` ``r ''`r badge_last_commit("GuangchuangYu/badger")` ``
 	- badge: `r badge_last_commit("GuangchuangYu/badger")`
++ direct and recursive dependencies (for CRAN pkgs)
+	- syntax: `` ``r ''`r badge_dependencies("badger")` ``
+	- badge: `r badge_dependencies("badger")`
