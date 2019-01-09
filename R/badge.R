@@ -292,10 +292,24 @@ badge_coveralls <- function(ref) {
 ##' @export
 ##' @author Gregor de Cillia
 badge_cran_download <- function(pkg, type = c("last-month", "last-week", "grand-total"),
-																color = "green") {
+                                color = "green") {
 	type <- match.arg(type)
   svg <- paste0("http://cranlogs.r-pkg.org/badges/", type, "/", pkg, "?color=", color)
   url <- paste0("https://cran.r-project.org/package=", pkg)
   placeholder <- "CRAN link"
   paste0("[![](", svg, ")](", url, ")")
+}
+
+##' dependency badge
+##'
+##' @title badge_depedencies
+##' @param pkg package
+##' @return badge in markdown syntax
+##' @export
+##' @author Dirk Eddelbuettel
+badge_dependencies <- function(pkg) {
+    badge <- paste0("https://tinyverse.netlify.com/badge/", pkg)
+    url <- paste0("https://cran.r-project.org/package=", pkg)
+    placeholder <- "Dependencies"
+    paste0("[![", placeholder, "](", badge, ")](", url, ")")
 }
