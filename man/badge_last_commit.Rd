@@ -9,7 +9,7 @@ badge_last_commit(ref = NULL)
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL}
 (the default), the reference is determined by the URL
-field in the description file.}
+field in the DESCRIPTION file.}
 }
 \value{
 badge in markdown syntax

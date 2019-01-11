@@ -221,7 +221,7 @@ badge_lifecycle <- function(stage = "experimental", color = NULL) {
 ##' @title badge_last_commit
 ##' @param ref Reference for a GitHub repository. If \code{NULL}
 ##'   (the default), the reference is determined by the URL
-##'   field in the description file.
+##'   field in the DESCRIPTION file.
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
@@ -292,7 +292,7 @@ badge_cran_release <- function(pkg = NULL, color) {
 ##' @title badge_coveralls
 ##' @param ref Reference for a GitHub repository. If \code{NULL}
 ##'   (the default), the reference is determined by the URL
-##'   field in the description file.
+##'   field in the DESCRIPTION file.
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
