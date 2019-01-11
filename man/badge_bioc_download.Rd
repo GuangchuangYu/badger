@@ -4,10 +4,11 @@
 \alias{badge_bioc_download}
 \title{badge_bioc_download}
 \usage{
-badge_bioc_download(pkg, by, color, type = "distinct")
+badge_bioc_download(pkg = NULL, by, color, type = "distinct")
 }
 \arguments{
-\item{pkg}{package}
+\item{pkg}{package. If \code{NULL} (the default) the package
+is determined via the DESCRIPTION file.}
 
 \item{by}{one of total or month}
 

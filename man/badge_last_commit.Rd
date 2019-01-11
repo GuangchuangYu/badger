@@ -4,10 +4,12 @@
 \alias{badge_last_commit}
 \title{badge_last_commit}
 \usage{
-badge_last_commit(ref)
+badge_last_commit(ref = NULL)
 }
 \arguments{
-\item{ref}{Reference for a GitHub repository}
+\item{ref}{Reference for a GitHub repository. If \code{NULL}
+(the default), the reference is determined by the URL
+field in the description file.}
 }
 \value{
 badge in markdown syntax

@@ -4,10 +4,11 @@
 \alias{badge_cran_release}
 \title{badge_cran_release}
 \usage{
-badge_cran_release(pkg, color)
+badge_cran_release(pkg = NULL, color)
 }
 \arguments{
-\item{pkg}{package}
+\item{pkg}{package. If \code{NULL} (the default) the package
+is determined via the DESCRIPTION file.}
 
 \item{color}{color of badge}
 }

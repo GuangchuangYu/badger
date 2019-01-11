@@ -4,10 +4,11 @@
 \alias{ver_devel}
 \title{ver_devel}
 \usage{
-ver_devel(pkg)
+ver_devel(pkg = NULL)
 }
 \arguments{
-\item{pkg}{package name}
+\item{pkg}{package. If \code{NULL} (the default) the package
+is determined via the DESCRIPTION file.}
 }
 \value{
 devel version
