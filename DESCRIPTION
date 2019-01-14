@@ -12,7 +12,8 @@ Depends:
     R (>= 3.3.0)
 Imports:
     dlstats,
-    rvcheck
+    rvcheck,
+    desc
 License: Artistic-2.0
 ByteCompile: true
 URL: https://github.com/GuangchuangYu/badger

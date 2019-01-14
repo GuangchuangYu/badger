@@ -4,10 +4,11 @@
 \alias{badge_github_version}
 \title{badge_github_version}
 \usage{
-badge_github_version(pkg, color)
+badge_github_version(pkg = NULL, color)
 }
 \arguments{
-\item{pkg}{package}
+\item{pkg}{package. If \code{NULL} (the default) the package
+is determined via the DESCRIPTION file.}
 
 \item{color}{badge color}
 }

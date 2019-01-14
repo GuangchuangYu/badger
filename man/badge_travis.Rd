@@ -4,10 +4,12 @@
 \alias{badge_travis}
 \title{badge_travis}
 \usage{
-badge_travis(ref)
+badge_travis(ref = NULL)
 }
 \arguments{
-\item{ref}{Reference for a GitHub repository}
+\item{ref}{Reference for a GitHub repository. If \code{NULL}
+(the default), the reference is determined by the URL
+field in the DESCRIPTION file.}
 }
 \value{
 badge in markdown syntax

@@ -4,10 +4,11 @@
 \alias{badge_devel}
 \title{badge_devel}
 \usage{
-badge_devel(pkg, color)
+badge_devel(pkg = NULL, color)
 }
 \arguments{
-\item{pkg}{package}
+\item{pkg}{package. If \code{NULL} (the default) the package
+is determined via the DESCRIPTION file.}
 
 \item{color}{badge color}
 }

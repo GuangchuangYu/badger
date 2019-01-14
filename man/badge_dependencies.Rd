@@ -4,10 +4,11 @@
 \alias{badge_dependencies}
 \title{badge_depedencies}
 \usage{
-badge_dependencies(pkg)
+badge_dependencies(pkg = NULL)
 }
 \arguments{
-\item{pkg}{package}
+\item{pkg}{package. If \code{NULL} (the default) the package
+is determined via the DESCRIPTION file.}
 }
 \value{
 badge in markdown syntax

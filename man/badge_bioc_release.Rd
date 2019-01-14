@@ -4,10 +4,11 @@
 \alias{badge_bioc_release}
 \title{badge_bioc_release}
 \usage{
-badge_bioc_release(pkg, color)
+badge_bioc_release(pkg = NULL, color)
 }
 \arguments{
-\item{pkg}{package}
+\item{pkg}{package. If \code{NULL} (the default) the package
+is determined via the DESCRIPTION file.}
 
 \item{color}{badge color}
 }

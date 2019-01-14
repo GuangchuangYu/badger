@@ -4,11 +4,12 @@
 \alias{badge_cran_download}
 \title{badge_cran_download}
 \usage{
-badge_cran_download(pkg, type = c("last-month", "last-week",
+badge_cran_download(pkg = NULL, type = c("last-month", "last-week",
   "grand-total"), color = "green")
 }
 \arguments{
-\item{pkg}{package}
+\item{pkg}{package. If \code{NULL} (the default) the package
+is determined via the DESCRIPTION file.}
 
 \item{type}{type of stats. \code{last-month}, \code{last-week} or \code{"grand-total"}}
 

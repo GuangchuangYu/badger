@@ -4,10 +4,11 @@
 \alias{badge_download_bioc}
 \title{badge_download_bioc}
 \usage{
-badge_download_bioc(pkg)
+badge_download_bioc(pkg = NULL)
 }
 \arguments{
-\item{pkg}{package}
+\item{pkg}{package. If \code{NULL} (the default) the package
+is determined via the DESCRIPTION file.}
 }
 \value{
 bioc download badge
