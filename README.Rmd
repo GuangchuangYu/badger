@@ -133,7 +133,10 @@ devtools::install_github("GuangchuangYu/badger")
 + direct and recursive dependencies (for CRAN pkgs)
 	- syntax: `` ``r ''`r badge_dependencies("badger")` ``
 	- badge: `r badge_dependencies("badger")`
-
++ CRAN checks results
+	- syntax: `` ``r ''`r badge_cran_checks("badger")` ``
+	- badge: `r badge_cran_checks("badger")`
+	
 ## Related Tools
 
 + [hexSticker](https://github.com/GuangchuangYu/hexSticker): create hexagon sticker in R
