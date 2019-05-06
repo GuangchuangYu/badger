@@ -340,3 +340,21 @@ badge_dependencies <- function(pkg = NULL) {
     placeholder <- "Dependencies"
     paste0("[![", placeholder, "](", badge, ")](", url, ")")
 }
+
+##' CRAN checks badge
+##'
+##' @title badge_cran_checks
+##' @param pkg package. If \code{NULL} (the default) the package
+##'   is determined via the DESCRIPTION file.
+##' @return badge in Markdown syntax
+##' @export
+##' @author Scott Chamberlain (badges API), Maëlle Salmon (function)
+badge_cran_checks <- function(pkg = NULL) {
+  pkg <- currentPackageName(pkg)
+  badge <- paste0("https://cranchecks.info/badges/summary/", pkg)
+  url <- paste0("https://cran.r-project.org/web/checks/check_results_",
+                pkg, ".html")
+  placeholder <- "CRAN checks"
+  paste0("[![", placeholder, "](", badge, ")](", url, ")")
+}
+
