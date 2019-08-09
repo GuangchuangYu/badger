@@ -108,22 +108,26 @@ badge_bioc_download <- function(pkg = NULL, by, color, type="distinct") {
     badge_custom("download", res, color, url)
 }
 
-##' official Bioconductor download badge
+##' official Bioconductor download badge (download ranking)
 ##'
 ##'
-##' @title badge_download_bioc
+##' @title badge_bioc_download_rank
+##' @rdname biocRanking
 ##' @param pkg package. If \code{NULL} (the default) the package
 ##'   is determined via the DESCRIPTION file.
-##' @return bioc download badge
+##' @return bioc download ranking badge
 ##' @export
 ##' @author guangchuang yu
-badge_download_bioc <- function(pkg = NULL) {
+badge_bioc_download_rank <- function(pkg = NULL) {
     pkg <- currentPackageName(pkg)
-    paste0("[![download](http://www.bioconductor.org/shields/downloads/",
+    paste0("[![download](http://www.bioconductor.org/shields/downloads/release/",
            pkg, ".svg)](https://bioconductor.org/packages/stats/bioc/", pkg, ")")
 
 }
 
+##' @rdname biocRanking
+##' @export
+badge_download_bioc <- badge_bioc_download_rank
 
 ##' doi badge
 ##'

@@ -14,8 +14,7 @@ Pages.
 
 Guangchuang YU <https://guangchuangyu.github.io>
 
-School of Basic Medical Sciences, Southern Medical
-University
+School of Basic Medical Sciences, Southern Medical University
 
 [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/GuangchuangYu)
 [![](https://img.shields.io/badge/follow%20me%20on-微信-green.svg)](https://guangchuangyu.github.io/blog_images/biobabble.jpg)
@@ -45,7 +44,7 @@ devtools::install_github("GuangchuangYu/badger")
   - release version (bioconductor)
       - syntax: `` `r badge_bioc_release("ggtree", "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/release%20version--green.svg)](https://www.bioconductor.org/packages/ggtree)
+        [![](https://img.shields.io/badge/release%20version-1.16.3-green.svg)](https://www.bioconductor.org/packages/ggtree)
   - release version (CRAN)
       - syntax: `` `r badge_cran("badger", "orange")` ``
       - badge:
@@ -53,7 +52,7 @@ devtools::install_github("GuangchuangYu/badger")
   - devel version
       - syntax: `` `r badge_devel("guangchuangyu/ggtree", "blue")` ``
       - badge:
-        [![](https://img.shields.io/badge/devel%20version-1.15.6-blue.svg)](https://github.com/guangchuangyu/ggtree)
+        [![](https://img.shields.io/badge/devel%20version-1.17.4-blue.svg)](https://github.com/guangchuangyu/ggtree)
 
 ### Download stats for bioconductor
 
@@ -61,17 +60,17 @@ devtools::install_github("GuangchuangYu/badger")
       - syntax: `` `r badge_bioc_download("clusterProfiler", "total",
         "blue", "total")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-225730/total-blue.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-259860/total-blue.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
   - Total of distinct IPs
       - syntax: `` `r badge_bioc_download("clusterProfiler", "total",
         "yellow")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-113444/total-yellow.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-130448/total-yellow.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
   - Monthly download of distinct IPs
       - syntax: `` `r badge_bioc_download("clusterProfiler", "month",
         "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-5002/month-green.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-5272/month-green.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
 
 ### Download stats for CRAN
 
@@ -96,7 +95,7 @@ devtools::install_github("GuangchuangYu/badger")
   - Altmetric score
       - syntax: `` `r badge_altmetric("10533079", "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/Altmetric-309-green.svg)](https://www.altmetric.com/details/10533079)
+        [![](https://img.shields.io/badge/Altmetric-306-green.svg)](https://www.altmetric.com/details/10533079)
 
 ### Academic
 

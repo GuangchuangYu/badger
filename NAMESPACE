@@ -2,6 +2,7 @@
 
 export(badge_altmetric)
 export(badge_bioc_download)
+export(badge_bioc_download_rank)
 export(badge_bioc_release)
 export(badge_code_size)
 export(badge_coveralls)
