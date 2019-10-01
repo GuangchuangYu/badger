@@ -15,7 +15,7 @@ field in the DESCRIPTION file.}
 badge in markdown syntax
 }
 \description{
-badge of CRAN release version
+badge of coveralls code coverage
 }
 \author{
 Gregor de Cillia
