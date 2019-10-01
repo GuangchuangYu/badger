@@ -307,6 +307,23 @@ badge_coveralls <- function(ref = NULL) {
   paste0("[![](", svg, ")](", url, ")")
 }
 
+##' badge of codecov code coverage
+##'
+##'
+##' @title badge_codecov
+##' @param ref Reference for a GitHub repository. If \code{NULL}
+##'   (the default), the reference is determined by the URL
+##'   field in the DESCRIPTION file.
+##' @return badge in markdown syntax
+##' @export
+##' @author Gregor de Cillia
+badge_codecov <- function(ref = NULL) {
+  ref <- currentGitHubRef(ref)
+  svg = paste0("https://codecov.io/gh/dynverse/", ref, "/branch/master/graph/badge.svg")
+  url <- paste0("https://codecov.io/gh/", ref)
+  paste0("[![](", svg, ")](", url, ")")
+}
+
 ##' badge of CRAN downloads
 ##'
 ##'
