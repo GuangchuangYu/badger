@@ -130,7 +130,7 @@ devtools::install_github("GuangchuangYu/badger")
   - codecov code coverage
       - syntax: `` `r badge_codecov("rcannood/princurve")` ``
       - badge:
-        [![](https://codecov.io/gh/dynverse/rcannood/princurve/branch/master/graph/badge.svg)](https://codecov.io/gh/rcannood/princurve)
+        [![](https://codecov.io/gh/rcannood/princurve/branch/master/graph/badge.svg)](https://codecov.io/gh/rcannood/princurve)
   - code size
       - syntax: `` `r badge_code_size("GuangchuangYu/badger")` ``
       - badge:

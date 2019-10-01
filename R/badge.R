@@ -319,7 +319,7 @@ badge_coveralls <- function(ref = NULL) {
 ##' @author Gregor de Cillia
 badge_codecov <- function(ref = NULL) {
   ref <- currentGitHubRef(ref)
-  svg = paste0("https://codecov.io/gh/dynverse/", ref, "/branch/master/graph/badge.svg")
+  svg = paste0("https://codecov.io/gh/", ref, "/branch/master/graph/badge.svg")
   url <- paste0("https://codecov.io/gh/", ref)
   paste0("[![](", svg, ")](", url, ")")
 }
