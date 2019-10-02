@@ -124,6 +124,9 @@ devtools::install_github("GuangchuangYu/badger")
 + coveralls code coverage
 	- syntax: `` ``r ''`r badge_coveralls("google/benchmark")` ``
 	- badge: `r badge_coveralls("google/benchmark")`
++ codecov code coverage
+	- syntax: `` ``r ''`r badge_codecov("rcannood/princurve")` ``
+	- badge: `r badge_codecov("rcannood/princurve")`
 + code size
 	- syntax: `` ``r ''`r badge_code_size("GuangchuangYu/badger")` ``
 	- badge: `r badge_code_size("GuangchuangYu/badger")`
