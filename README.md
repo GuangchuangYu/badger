@@ -10,7 +10,7 @@
 Query information and generate badge for using in README and GitHub
 Pages.
 
-## Author
+## :writing\_hand: Author
 
 Guangchuang YU <https://guangchuangyu.github.io>
 
@@ -19,7 +19,7 @@ School of Basic Medical Sciences, Southern Medical University
 [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/GuangchuangYu)
 [![](https://img.shields.io/badge/follow%20me%20on-WeChat-green.svg)](https://guangchuangyu.github.io/blog_images/biobabble.jpg)
 
-## Installation
+## :arrow\_double\_down: Installation
 
 Get the released version from CRAN:
 
@@ -36,14 +36,14 @@ devtools::install_github("GuangchuangYu/badger")
 
 -----
 
-## Examples
+## :book: Examples
 
 ### Package Version
 
   - release version (bioconductor)
       - syntax: `` `r badge_bioc_release("ggtree", "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/release%20version-1.16.6-green.svg)](https://www.bioconductor.org/packages/ggtree)
+        [![](https://img.shields.io/badge/release%20version-2.0.0-green.svg)](https://www.bioconductor.org/packages/ggtree)
   - release version (CRAN)
       - syntax: `` `r badge_cran("badger", "orange")` ``
       - badge:
@@ -51,7 +51,7 @@ devtools::install_github("GuangchuangYu/badger")
   - devel version
       - syntax: `` `r badge_devel("guangchuangyu/ggtree", "blue")` ``
       - badge:
-        [![](https://img.shields.io/badge/devel%20version-1.99.1-blue.svg)](https://github.com/guangchuangyu/ggtree)
+        [![](https://img.shields.io/badge/devel%20version-2.1.1-blue.svg)](https://github.com/guangchuangyu/ggtree)
 
 ### Download stats for bioconductor
 
@@ -59,17 +59,17 @@ devtools::install_github("GuangchuangYu/badger")
       - syntax: `` `r badge_bioc_download("clusterProfiler", "total",
         "blue", "total")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-277803/total-blue.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-291338/total-blue.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
   - Total of distinct IPs
       - syntax: `` `r badge_bioc_download("clusterProfiler", "total",
         "yellow")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-140021/total-yellow.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-147091/total-yellow.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
   - Monthly download of distinct IPs
       - syntax: `` `r badge_bioc_download("clusterProfiler", "month",
         "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-5019/month-green.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-5387/month-green.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
 
 ### Download stats for CRAN
 
@@ -94,7 +94,7 @@ devtools::install_github("GuangchuangYu/badger")
   - Altmetric score
       - syntax: `` `r badge_altmetric("10533079", "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/Altmetric-310-green.svg)](https://www.altmetric.com/details/10533079)
+        [![](https://img.shields.io/badge/Altmetric-312-green.svg)](https://www.altmetric.com/details/10533079)
 
 ### Academic
 
@@ -146,7 +146,7 @@ devtools::install_github("GuangchuangYu/badger")
       - badge: [![CRAN
         checks](https://cranchecks.info/badges/summary/badger)](https://cran.r-project.org/web/checks/check_results_badger.html)
 
-## Related Tools
+## :hammer: Related Tools
 
   - [hexSticker](https://github.com/GuangchuangYu/hexSticker): create
     hexagon sticker in R

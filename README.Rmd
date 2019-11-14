@@ -24,7 +24,7 @@ cat(
 
 Query information and generate badge for using in README and GitHub Pages.
 
-## Author
+## :writing_hand: Author
 
 Guangchuang YU <https://guangchuangyu.github.io>
 
@@ -34,7 +34,7 @@ School of Basic Medical Sciences, Southern Medical University
 `r badger::badge_custom("follow me on", "WeChat", "green", "https://guangchuangyu.github.io/blog_images/biobabble.jpg")`
 
 
-## Installation
+## :arrow_double_down: Installation
 
 Get the released version from CRAN:
 
@@ -51,7 +51,7 @@ devtools::install_github("GuangchuangYu/badger")
 
 ----
 
-## Examples
+## :book: Examples
 
 ### Package Version
 
@@ -139,7 +139,7 @@ devtools::install_github("GuangchuangYu/badger")
 	- syntax: `` ``r ''`r badge_cran_checks("badger")` ``
 	- badge: `r badge_cran_checks("badger")`
 	
-## Related Tools
+## :hammer: Related Tools
 
 + [hexSticker](https://github.com/GuangchuangYu/hexSticker): create hexagon sticker in R
 
