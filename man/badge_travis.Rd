@@ -4,12 +4,15 @@
 \alias{badge_travis}
 \title{badge_travis}
 \usage{
-badge_travis(ref = NULL)
+badge_travis(ref = NULL, is_commercial = FALSE)
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL}
 (the default), the reference is determined by the URL
 field in the DESCRIPTION file.}
+
+\item{is_commercial}{Flad to indicate whether or not to use
+https://travis-ci.com}
 }
 \value{
 badge in markdown syntax

@@ -243,13 +243,16 @@ badge_last_commit <- function(ref = NULL) {
 ##' @param ref Reference for a GitHub repository. If \code{NULL}
 ##'   (the default), the reference is determined by the URL
 ##'   field in the DESCRIPTION file.
+##' @param is_commercial Flad to indicate whether or not to use
+##'   https://travis-ci.com
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_travis <- function(ref = NULL) {
+badge_travis <- function(ref = NULL, is_commercial = FALSE) {
   ref <- currentGitHubRef(ref)
-  svg <- paste0("https://travis-ci.org/", ref, ".svg?branch=master")
-  url <- paste0("https://travis-ci.org/", ref)
+  ext <- ifelse(is_commercial, "com/", "org/")
+  svg <- paste0("https://travis-ci.", ext, ref, ".svg?branch=master")
+  url <- paste0("https://travis-ci.", ext, ref)
   paste0("[![](", svg, ")](", url, ")")
 }
 
