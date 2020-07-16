@@ -381,3 +381,28 @@ badge_cran_checks <- function(pkg = NULL) {
   paste0("[![", placeholder, "](", badge, ")](", url, ")")
 }
 
+#' License badge
+#'
+#' @param license The license to use. If \code{NULL} (the default), the license
+#'   is determined via the DESCRIPTION file.
+#' @param color badge color
+#' @param url The URL of the LICENSE text. If \code{NULL} (the default), links
+#'   to the CRAN Package License page. This leads to a broken link if package
+#'   uses a non-CRAN compatible license.
+#'
+#' @return badge in markdown syntax
+#' @export
+#' @author Alexander Rossell Hayes
+badge_license <- function(license = NULL, color, url = NULL) {
+  if (is.null(license)) {
+    license <- gsub(" \\+.*", "", desc::desc_get_field("License"))
+  }
+  badge <- paste0("https://img.shields.io/badge/license-",
+                  license, "-", color, ".svg")
+  if (is.null(url)) {
+    url <- paste0("https://cran.r-project.org/web/licenses/", license)
+  }
+  placeholder <- paste("License:", license)
+  paste0("[![", placeholder, "](", badge, ")](", url, ")")
+}
+
