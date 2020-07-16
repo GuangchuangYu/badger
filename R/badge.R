@@ -381,3 +381,17 @@ badge_cran_checks <- function(pkg = NULL) {
   paste0("[![", placeholder, "](", badge, ")](", url, ")")
 }
 
+##' GitHub Actions R-CMD-CHECK badge
+##'
+##' @param ref Reference for a GitHub repository. If \code{NULL} (the default),
+##'   the reference is determined by the URL field in the DESCRIPTION file.
+##'
+##' @return badge in Markdown syntax
+##' @export
+##' @author Alexander Rossell Hayes
+badge_github_check <- function(ref = NULL) {
+  ref <- currentGitHubRef(ref)
+  svg <- paste0("https://github.com/", ref, "/workflows/R-CMD-check/badge.svg")
+  url <- paste0("https://github.com/", ref, "/actions")
+  paste0("[![R build status](", svg, ")](", url, ")")
+}
