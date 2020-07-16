@@ -381,7 +381,7 @@ badge_cran_checks <- function(pkg = NULL) {
   paste0("[![", placeholder, "](", badge, ")](", url, ")")
 }
 
-##' GitHub Actions R-CMD-CHECK badge
+##' GitHub Actions badge
 ##'
 ##' @param ref Reference for a GitHub repository. If \code{NULL} (the default),
 ##'   the reference is determined by the URL field in the DESCRIPTION file.
