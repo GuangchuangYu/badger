@@ -70,7 +70,10 @@ ver_devel <- function (pkg = NULL) {
     ##     }
     ## }
     pkg <- currentGitHubRef(pkg)
-    check_github(pkg)$latest_version
+    ver <- tryCatch(desc::desc_get_field("Version"), error = function(e) NULL)
+    if (is.null(ver ))
+        ver <- check_github(pkg)$latest_version
+    return(ver)
 }
 
 ##' badge of bioconductor download number
