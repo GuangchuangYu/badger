@@ -391,7 +391,7 @@ badge_cran_checks <- function(pkg = NULL) {
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Alexander Rossell Hayes
-badge_github_actions <- function(ref = NULL, action = "R-CMD-CHECK") {
+badge_github_actions <- function(ref = NULL, action = "R-CMD-check") {
   ref <- currentGitHubRef(ref)
   svg <- paste0("https://github.com/", ref, "/workflows/", action, "/badge.svg")
   url <- paste0("https://github.com/", ref, "/actions")
