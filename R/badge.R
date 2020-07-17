@@ -246,13 +246,16 @@ badge_last_commit <- function(ref = NULL) {
 ##' @param ref Reference for a GitHub repository. If \code{NULL}
 ##'   (the default), the reference is determined by the URL
 ##'   field in the DESCRIPTION file.
+##' @param is_commercial Flad to indicate whether or not to use
+##'   https://travis-ci.com
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_travis <- function(ref = NULL) {
+badge_travis <- function(ref = NULL, is_commercial = FALSE) {
   ref <- currentGitHubRef(ref)
-  svg <- paste0("https://travis-ci.org/", ref, ".svg?branch=master")
-  url <- paste0("https://travis-ci.org/", ref)
+  ext <- ifelse(is_commercial, "com/", "org/")
+  svg <- paste0("https://travis-ci.", ext, ref, ".svg?branch=master")
+  url <- paste0("https://travis-ci.", ext, ref)
   paste0("[![](", svg, ")](", url, ")")
 }
 
@@ -379,5 +382,48 @@ badge_cran_checks <- function(pkg = NULL) {
                 pkg, ".html")
   placeholder <- "CRAN checks"
   paste0("[![", placeholder, "](", badge, ")](", url, ")")
+}
+
+#' License badge
+#'
+#' @param license The license to use. If \code{NULL} (the default), the license
+#'   is determined via the DESCRIPTION file.
+#' @param color badge color
+#' @param url The URL of the LICENSE text. If \code{NULL} (the default), links
+#'   to the CRAN Package License page. This leads to a broken link if package
+#'   uses a non-CRAN compatible license.
+#'
+#' @return badge in markdown syntax
+#' @export
+#' @author Alexander Rossell Hayes
+badge_license <- function(license = NULL, color, url = NULL) {
+  if (is.null(license)) {
+    license <- gsub(" \\+.*", "", desc::desc_get_field("License"))
+  }
+  badge <- paste0("https://img.shields.io/badge/license-",
+                  license, "-", color, ".svg")
+  if (is.null(url)) {
+    url <- paste0("https://cran.r-project.org/web/licenses/", license)
+  }
+  placeholder <- paste("License:", license)
+  paste0("[![", placeholder, "](", badge, ")](", url, ")")
+}
+
+
+##' GitHub Actions badge
+##'
+##' @param ref Reference for a GitHub repository. If \code{NULL} (the default),
+##'   the reference is determined by the URL field in the DESCRIPTION file.
+##' @param action The name of the GitHub actions workflow. Defaults to
+##'   \code{"R-CMD-CHECK"}.
+##'
+##' @return badge in markdown syntax
+##' @export
+##' @author Alexander Rossell Hayes
+badge_github_actions <- function(ref = NULL, action = "R-CMD-CHECK") {
+  ref <- currentGitHubRef(ref)
+  svg <- paste0("https://github.com/", ref, "/workflows/", action, "/badge.svg")
+  url <- paste0("https://github.com/", ref, "/actions")
+  paste0("[![R build status](", svg, ")](", url, ")")
 }
 
