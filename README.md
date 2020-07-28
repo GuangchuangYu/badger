@@ -118,9 +118,9 @@ devtools::install_github("GuangchuangYu/badger")
       - badge:
         [![](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
   - License
-      - syntax: `` `r badge_license("Artistic-2.0", "green")` ``
+      - syntax: `` `r badge_license("Artistic-2.0")` ``
       - badge: [![License:
-        Artistic-2.0](https://img.shields.io/badge/license-Artistic-2.0-green.svg)](https://cran.r-project.org/web/licenses/Artistic-2.0)
+        Artistic-2.0](https://img.shields.io/badge/license-Artistic--2.0-blue.svg)](https://cran.r-project.org/web/licenses/Artistic-2.0)
   - travis build-status
       - syntax: `` `r badge_travis("rstudio/rmarkdown")` ``
       - badge:

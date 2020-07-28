@@ -18,7 +18,9 @@ badge in markdown syntax
 altmetric badge
 }
 \examples{
+\dontrun{
 badge_altmetric("2788597", "blue")
+}
 }
 \author{
 Guangchuang

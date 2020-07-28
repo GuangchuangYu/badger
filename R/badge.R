@@ -180,7 +180,9 @@ badge_custom <- function(x, y, color, url=NULL) {
 ##' @return badge in markdown syntax
 ##' @author Guangchuang
 ##' @examples
+##' \dontrun{
 ##' badge_altmetric("2788597", "blue")
+##' }
 ##' @export
 badge_altmetric <- function(id, color) {
     url <- paste0("https://www.altmetric.com/details/", id)
