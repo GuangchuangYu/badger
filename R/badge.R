@@ -396,12 +396,12 @@ badge_cran_checks <- function(pkg = NULL) {
 #' @return badge in markdown syntax
 #' @export
 #' @author Alexander Rossell Hayes
-badge_license <- function(license = NULL, color, url = NULL) {
+badge_license <- function(license = NULL, color = "blue", url = NULL) {
   if (is.null(license)) {
     license <- gsub(" \\+.*", "", desc::desc_get_field("License"))
   }
   badge <- paste0("https://img.shields.io/badge/license-",
-                  license, "-", color, ".svg")
+                  gsub("-", "--", license), "-", color, ".svg")
   if (is.null(url)) {
     url <- paste0("https://cran.r-project.org/web/licenses/", license)
   }
