@@ -4,7 +4,7 @@
 \alias{badge_license}
 \title{License badge}
 \usage{
-badge_license(license = NULL, color, url = NULL)
+badge_license(license = NULL, color = "blue", url = NULL)
 }
 \arguments{
 \item{license}{The license to use. If \code{NULL} (the default), the license

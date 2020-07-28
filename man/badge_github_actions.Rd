@@ -4,7 +4,7 @@
 \alias{badge_github_actions}
 \title{GitHub Actions badge}
 \usage{
-badge_github_actions(ref = NULL, action = "R-CMD-CHECK")
+badge_github_actions(ref = NULL, action = "R-CMD-check")
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL} (the default),
