@@ -322,12 +322,17 @@ badge_coveralls <- function(ref = NULL) {
 ##' @param ref Reference for a GitHub repository. If \code{NULL}
 ##'   (the default), the reference is determined by the URL
 ##'   field in the DESCRIPTION file.
+##' @param token Codecov graphing token, needed for private repositories.
+##'   It can be obtained at https://codecov.io/gh/USER/REPO/branch/master/graph/
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_codecov <- function(ref = NULL) {
+badge_codecov <- function(ref = NULL, token = NULL) {
   ref <- currentGitHubRef(ref)
   svg = paste0("https://codecov.io/gh/", ref, "/branch/master/graph/badge.svg")
+  if (!is.null(token)) {
+    svg <- paste0(svg, "?token=", token)
+  }
   url <- paste0("https://codecov.io/gh/", ref)
   paste0("[![](", svg, ")](", url, ")")
 }
