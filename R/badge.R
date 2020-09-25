@@ -70,7 +70,10 @@ ver_devel <- function (pkg = NULL) {
     ##     }
     ## }
     pkg <- currentGitHubRef(pkg)
-    check_github(pkg)$latest_version
+    ver <- tryCatch(desc::desc_get_field("Version"), error = function(e) NULL)
+    if (is.null(ver ))
+        ver <- check_github(pkg)$latest_version
+    return(ver)
 }
 
 ##' badge of bioconductor download number
@@ -177,7 +180,9 @@ badge_custom <- function(x, y, color, url=NULL) {
 ##' @return badge in markdown syntax
 ##' @author Guangchuang
 ##' @examples
+##' \dontrun{
 ##' badge_altmetric("2788597", "blue")
+##' }
 ##' @export
 badge_altmetric <- function(id, color) {
     url <- paste0("https://www.altmetric.com/details/", id)
@@ -379,5 +384,48 @@ badge_cran_checks <- function(pkg = NULL) {
                 pkg, ".html")
   placeholder <- "CRAN checks"
   paste0("[![", placeholder, "](", badge, ")](", url, ")")
+}
+
+#' License badge
+#'
+#' @param license The license to use. If \code{NULL} (the default), the license
+#'   is determined via the DESCRIPTION file.
+#' @param color badge color
+#' @param url The URL of the LICENSE text. If \code{NULL} (the default), links
+#'   to the CRAN Package License page. This leads to a broken link if package
+#'   uses a non-CRAN compatible license.
+#'
+#' @return badge in markdown syntax
+#' @export
+#' @author Alexander Rossell Hayes
+badge_license <- function(license = NULL, color = "blue", url = NULL) {
+  if (is.null(license)) {
+    license <- gsub(" \\+.*", "", desc::desc_get_field("License"))
+  }
+  badge <- paste0("https://img.shields.io/badge/license-",
+                  gsub("-", "--", license), "-", color, ".svg")
+  if (is.null(url)) {
+    url <- paste0("https://cran.r-project.org/web/licenses/", license)
+  }
+  placeholder <- paste("License:", license)
+  paste0("[![", placeholder, "](", badge, ")](", url, ")")
+}
+
+
+##' GitHub Actions badge
+##'
+##' @param ref Reference for a GitHub repository. If \code{NULL} (the default),
+##'   the reference is determined by the URL field in the DESCRIPTION file.
+##' @param action The name of the GitHub actions workflow. Defaults to
+##'   \code{"R-CMD-CHECK"}.
+##'
+##' @return badge in markdown syntax
+##' @export
+##' @author Alexander Rossell Hayes
+badge_github_actions <- function(ref = NULL, action = "R-CMD-check") {
+  ref <- currentGitHubRef(ref)
+  svg <- paste0("https://github.com/", ref, "/workflows/", action, "/badge.svg")
+  url <- paste0("https://github.com/", ref, "/actions")
+  paste0("[![R build status](", svg, ")](", url, ")")
 }
 

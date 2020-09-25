@@ -43,7 +43,7 @@ devtools::install_github("GuangchuangYu/badger")
   - release version (bioconductor)
       - syntax: `` `r badge_bioc_release("ggtree", "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/release%20version-2.0.0-green.svg)](https://www.bioconductor.org/packages/ggtree)
+        [![](https://img.shields.io/badge/release%20version-2.2.2-green.svg)](https://www.bioconductor.org/packages/ggtree)
   - release version (CRAN)
       - syntax: `` `r badge_cran("badger", "orange")` ``
       - badge:
@@ -51,7 +51,7 @@ devtools::install_github("GuangchuangYu/badger")
   - devel version
       - syntax: `` `r badge_devel("guangchuangyu/ggtree", "blue")` ``
       - badge:
-        [![](https://img.shields.io/badge/devel%20version-2.1.1-blue.svg)](https://github.com/guangchuangyu/ggtree)
+        [![](https://img.shields.io/badge/devel%20version-0.0.8-blue.svg)](https://github.com/guangchuangyu/ggtree)
 
 ### Download stats for bioconductor
 
@@ -59,17 +59,17 @@ devtools::install_github("GuangchuangYu/badger")
       - syntax: `` `r badge_bioc_download("clusterProfiler", "total",
         "blue", "total")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-291338/total-blue.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-404530/total-blue.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
   - Total of distinct IPs
       - syntax: `` `r badge_bioc_download("clusterProfiler", "total",
         "yellow")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-147091/total-yellow.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-208658/total-yellow.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
   - Monthly download of distinct IPs
       - syntax: `` `r badge_bioc_download("clusterProfiler", "month",
         "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-5387/month-green.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-7962/month-green.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
 
 ### Download stats for CRAN
 
@@ -94,7 +94,7 @@ devtools::install_github("GuangchuangYu/badger")
   - Altmetric score
       - syntax: `` `r badge_altmetric("10533079", "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/Altmetric-312-green.svg)](https://www.altmetric.com/details/10533079)
+        [![](https://img.shields.io/badge/Altmetric-313-green.svg)](https://www.altmetric.com/details/10533079)
 
 ### Academic
 
@@ -117,6 +117,10 @@ devtools::install_github("GuangchuangYu/badger")
       - syntax: `` `r badge_lifecycle("maturing", "blue")` ``
       - badge:
         [![](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+  - License
+      - syntax: `` `r badge_license("Artistic-2.0")` ``
+      - badge: [![License:
+        Artistic-2.0](https://img.shields.io/badge/license-Artistic--2.0-blue.svg)](https://cran.r-project.org/web/licenses/Artistic-2.0)
   - travis build-status
       - syntax: `` `r badge_travis("rstudio/rmarkdown")` ``
       - badge:
@@ -145,6 +149,10 @@ devtools::install_github("GuangchuangYu/badger")
       - syntax: `` `r badge_cran_checks("badger")` ``
       - badge: [![CRAN
         checks](https://cranchecks.info/badges/summary/badger)](https://cran.r-project.org/web/checks/check_results_badger.html)
+  - GitHub actions
+      - syntax: `` `r badge_github_actions("rossellhayes/ipa")` ``
+      - badge: [![R build
+        status](https://github.com/rossellhayes/ipa/workflows/R-CMD-check/badge.svg)](https://github.com/rossellhayes/ipa/actions)
 
 ## :hammer: Related Tools
 
