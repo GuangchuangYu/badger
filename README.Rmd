@@ -144,6 +144,9 @@ devtools::install_github("GuangchuangYu/badger")
 + GitHub actions
   - syntax: `` ``r ''`r badge_github_actions("rossellhayes/ipa")` ``
   - badge: `r badge_github_actions("rossellhayes/ipa")`
++ CodeFactor code quality
+  - syntax: `` ``r ''`r badge_codefactor("rossellhayes/ipa")` ``
+  - badge: `r badge_codefactor("rossellhayes/ipa")`
 	
 ## :hammer: Related Tools
 

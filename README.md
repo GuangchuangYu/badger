@@ -43,7 +43,7 @@ devtools::install_github("GuangchuangYu/badger")
   - release version (bioconductor)
       - syntax: `` `r badge_bioc_release("ggtree", "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/release%20version-2.2.2-green.svg)](https://www.bioconductor.org/packages/ggtree)
+        [![](https://img.shields.io/badge/release%20version-2.4.1-green.svg)](https://www.bioconductor.org/packages/ggtree)
   - release version (CRAN)
       - syntax: `` `r badge_cran("badger", "orange")` ``
       - badge:
@@ -59,17 +59,17 @@ devtools::install_github("GuangchuangYu/badger")
       - syntax: `` `r badge_bioc_download("clusterProfiler", "total",
         "blue", "total")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-404530/total-blue.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-462233/total-blue.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
   - Total of distinct IPs
       - syntax: `` `r badge_bioc_download("clusterProfiler", "total",
         "yellow")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-208658/total-yellow.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-241242/total-yellow.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
   - Monthly download of distinct IPs
       - syntax: `` `r badge_bioc_download("clusterProfiler", "month",
         "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/download-7962/month-green.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+        [![](https://img.shields.io/badge/download-8727/month-green.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
 
 ### Download stats for CRAN
 
@@ -94,7 +94,7 @@ devtools::install_github("GuangchuangYu/badger")
   - Altmetric score
       - syntax: `` `r badge_altmetric("10533079", "green")` ``
       - badge:
-        [![](https://img.shields.io/badge/Altmetric-313-green.svg)](https://www.altmetric.com/details/10533079)
+        [![](https://img.shields.io/badge/Altmetric-314-green.svg)](https://www.altmetric.com/details/10533079)
 
 ### Academic
 
@@ -153,6 +153,10 @@ devtools::install_github("GuangchuangYu/badger")
       - syntax: `` `r badge_github_actions("rossellhayes/ipa")` ``
       - badge: [![R build
         status](https://github.com/rossellhayes/ipa/workflows/R-CMD-check/badge.svg)](https://github.com/rossellhayes/ipa/actions)
+  - CodeFactor code quality
+      - syntax: `` `r badge_codefactor("rossellhayes/ipa")` ``
+      - badge:
+        [![CodeFactor](https://www.codefactor.io/repository/github/rossellhayes/ipa/badge)](https://www.codefactor.io/repository/github/rossellhayes/ipa)
 
 ## :hammer: Related Tools
 
