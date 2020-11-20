@@ -434,3 +434,18 @@ badge_github_actions <- function(ref = NULL, action = "R-CMD-check") {
   paste0("[![R build status](", svg, ")](", url, ")")
 }
 
+##' CodeFactor badge
+##'
+##' @param ref Reference for a GitHub repository. If \code{NULL} (the default),
+##'   the reference is determined by the URL field in the DESCRIPTION file.
+##'
+##' @return badge in markdown syntax
+##' @export
+##' @author Alexander Rossell Hayes
+badge_codefactor <- function(ref = NULL) {
+  ref <- currentGitHubRef(ref)
+  url <- paste0("https://www.codefactor.io/repository/github/", ref)
+  svg <- paste0(url, "/badge")
+  paste0("[![CodeFactor](", svg, ")](", url, ")")
+}
+
