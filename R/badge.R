@@ -210,16 +210,18 @@ badge_sci_citation <- function(url, color) {
 ##'
 ##'
 ##' @title badge_lifcycle
-##' @param stage lifecycle stage See \href{https://www.tidyverse.org/lifecycle/}{https://www.tidyverse.org/lifecycle/}
+##' @param stage lifecycle stage See
+##'   \href{https://lifecycle.r-lib.org/articles/stages.html}{https://lifecycle.r-lib.org/articles/stages.html}
 ##' @param color color of the badge. If missing, the color is determined by the stage.
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
 badge_lifecycle <- function(stage = "experimental", color = NULL) {
-  url <- paste0("https://www.tidyverse.org/lifecycle/#", stage)
+  url <- paste0("https://lifecycle.r-lib.org/articles/stages.html#", stage)
   if (is.null(color))
     color <- switch(stage, experimental = "orange", maturing = "blue", stable = "brightgreen",
                     retired = "orange", archived = "red", dormant = "blue", questioning = "blue",
+                    superseded = "blue",
                     stop("invalid stage: ", stage))
   badge_custom("lifecycle", stage, color, url)
 }
