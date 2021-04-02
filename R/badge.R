@@ -231,32 +231,34 @@ badge_lifecycle <- function(stage = "experimental", color = NULL) {
 ##' @param ref Reference for a GitHub repository. If \code{NULL}
 ##'   (the default), the reference is determined by the URL
 ##'   field in the DESCRIPTION file.
+##' @param branch The GitHub branch. Defaults to \code{"master"}.
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_last_commit <- function(ref = NULL) {
+badge_last_commit <- function(ref = NULL, branch = "master") {
   ref <- currentGitHubRef(ref)
-  url <- paste0("https://github.com/", ref, "/commits/master")
+  url <- paste0("https://github.com/", ref, "/commits/", branch)
   svg <- paste0("https://img.shields.io/github/last-commit/", ref, ".svg")
   paste0("[![](", svg, ")](", url, ")")
 }
 
-##' reavis-ci badge
+##' travis-ci badge
 ##'
 ##'
 ##' @title badge_travis
 ##' @param ref Reference for a GitHub repository. If \code{NULL}
 ##'   (the default), the reference is determined by the URL
 ##'   field in the DESCRIPTION file.
-##' @param is_commercial Flad to indicate whether or not to use
+##' @param is_commercial Flag to indicate whether or not to use
 ##'   https://travis-ci.com
+##' @param branch The GitHub branch. Defaults to \code{"master"}.
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_travis <- function(ref = NULL, is_commercial = FALSE) {
+badge_travis <- function(ref = NULL, is_commercial = FALSE, branch = "master") {
   ref <- currentGitHubRef(ref)
   ext <- ifelse(is_commercial, "com/", "org/")
-  svg <- paste0("https://travis-ci.", ext, ref, ".svg?branch=master")
+  svg <- paste0("https://travis-ci.", ext, ref, ".svg?branch=", branch)
   url <- paste0("https://travis-ci.", ext, ref)
   paste0("[![](", svg, ")](", url, ")")
 }
@@ -305,12 +307,13 @@ badge_cran_release <- function(pkg = NULL, color) {
 ##' @param ref Reference for a GitHub repository. If \code{NULL}
 ##'   (the default), the reference is determined by the URL
 ##'   field in the DESCRIPTION file.
+##' @param branch The GitHub branch. Defaults to \code{"master"}.
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_coveralls <- function(ref = NULL) {
+badge_coveralls <- function(ref = NULL, branch = "master") {
   ref <- currentGitHubRef(ref)
-  svg = paste0("https://coveralls.io/repos/github/", ref, "/badge.svg?branch=master")
+  svg = paste0("https://coveralls.io/repos/github/", ref, "/badge.svg?branch=", branch)
   url <- paste0("https://coveralls.io/github/", ref)
   paste0("[![](", svg, ")](", url, ")")
 }
@@ -323,13 +326,14 @@ badge_coveralls <- function(ref = NULL) {
 ##'   (the default), the reference is determined by the URL
 ##'   field in the DESCRIPTION file.
 ##' @param token Codecov graphing token, needed for private repositories.
-##'   It can be obtained at https://codecov.io/gh/USER/REPO/branch/master/graph/
+##'   It can be obtained at https://codecov.io/gh/USER/REPO/branch/BRANCH/graph/
+##' @param branch The GitHub branch. Defaults to \code{"master"}.
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_codecov <- function(ref = NULL, token = NULL) {
+badge_codecov <- function(ref = NULL, token = NULL, branch = "master") {
   ref <- currentGitHubRef(ref)
-  svg = paste0("https://codecov.io/gh/", ref, "/branch/master/graph/badge.svg")
+  svg = paste0("https://codecov.io/gh/", ref, "/branch/", branch, "/graph/badge.svg")
   if (!is.null(token)) {
     svg <- paste0(svg, "?token=", token)
   }

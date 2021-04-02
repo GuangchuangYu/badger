@@ -20,3 +20,4 @@ currentGitHubRef <- function(ref) {
 	ref <- gsub("https://github.com/", "", url)
 	ref
 }
+

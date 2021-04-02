@@ -4,12 +4,14 @@
 \alias{badge_coveralls}
 \title{badge_coveralls}
 \usage{
-badge_coveralls(ref = NULL)
+badge_coveralls(ref = NULL, branch = "master")
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL}
 (the default), the reference is determined by the URL
 field in the DESCRIPTION file.}
+
+\item{branch}{The GitHub branch. Defaults to \code{"master"}.}
 }
 \value{
 badge in markdown syntax
