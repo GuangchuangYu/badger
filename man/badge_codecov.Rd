@@ -4,7 +4,7 @@
 \alias{badge_codecov}
 \title{badge_codecov}
 \usage{
-badge_codecov(ref = NULL, token = NULL)
+badge_codecov(ref = NULL, token = NULL, branch = "master")
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL}
@@ -12,7 +12,9 @@ badge_codecov(ref = NULL, token = NULL)
 field in the DESCRIPTION file.}
 
 \item{token}{Codecov graphing token, needed for private repositories.
-It can be obtained at https://codecov.io/gh/USER/REPO/branch/master/graph/}
+It can be obtained at https://codecov.io/gh/USER/REPO/branch/BRANCH/graph/}
+
+\item{branch}{The GitHub branch. Defaults to \code{"master"}.}
 }
 \value{
 badge in markdown syntax

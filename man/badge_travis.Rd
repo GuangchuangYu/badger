@@ -4,21 +4,23 @@
 \alias{badge_travis}
 \title{badge_travis}
 \usage{
-badge_travis(ref = NULL, is_commercial = FALSE)
+badge_travis(ref = NULL, is_commercial = FALSE, branch = "master")
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL}
 (the default), the reference is determined by the URL
 field in the DESCRIPTION file.}
 
-\item{is_commercial}{Flad to indicate whether or not to use
+\item{is_commercial}{Flag to indicate whether or not to use
 https://travis-ci.com}
+
+\item{branch}{The GitHub branch. Defaults to \code{"master"}.}
 }
 \value{
 badge in markdown syntax
 }
 \description{
-reavis-ci badge
+travis-ci badge
 }
 \author{
 Gregor de Cillia
