@@ -15,7 +15,8 @@ Depends:
 Imports:
     dlstats,
     rvcheck,
-    desc
+    desc,
+    usethis
 License: Artistic-2.0
 ByteCompile: true
 URL: https://github.com/GuangchuangYu/badger

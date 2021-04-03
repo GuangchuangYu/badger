@@ -21,3 +21,7 @@ currentGitHubRef <- function(ref) {
 	ref
 }
 
+defaultBranch <- function(branch) {
+  if (!is.null(branch)) {return(branch)}
+  usethis::git_branch_default()
+}
