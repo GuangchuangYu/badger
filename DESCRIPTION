@@ -16,7 +16,7 @@ Imports:
     dlstats,
     rvcheck,
     desc,
-    usethis
+    usethis (>= 2.0.0)
 License: Artistic-2.0
 ByteCompile: true
 URL: https://github.com/GuangchuangYu/badger
