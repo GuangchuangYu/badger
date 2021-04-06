@@ -7,7 +7,8 @@
 badge_lifecycle(stage = "experimental", color = NULL)
 }
 \arguments{
-\item{stage}{lifecycle stage See \href{https://www.tidyverse.org/lifecycle/}{https://www.tidyverse.org/lifecycle/}}
+\item{stage}{lifecycle stage See
+\href{https://lifecycle.r-lib.org/articles/stages.html}{https://lifecycle.r-lib.org/articles/stages.html}}
 
 \item{color}{color of the badge. If missing, the color is determined by the stage.}
 }
