@@ -15,11 +15,11 @@ Depends:
 Imports:
     dlstats,
     rvcheck,
-    desc
+    desc,
+    usethis (>= 2.0.0)
 License: Artistic-2.0
 ByteCompile: true
 URL: https://github.com/GuangchuangYu/badger
 BugReports: https://github.com/GuangchuangYu/badger/issues
 Encoding: UTF-8
-LazyData: true
 RoxygenNote: 7.1.1
