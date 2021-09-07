@@ -215,14 +215,19 @@ badge_sci_citation <- function(url, color) {
 ##' @param color color of the badge. If missing, the color is determined by the stage.
 ##' @return badge in markdown syntax
 ##' @export
-##' @author Gregor de Cillia
+##' @author Gregor de Cillia, Waldir Leoncio
 badge_lifecycle <- function(stage = "experimental", color = NULL) {
   url <- paste0("https://lifecycle.r-lib.org/articles/stages.html#", stage)
-  if (is.null(color))
-    color <- switch(stage, experimental = "orange", maturing = "blue", stable = "brightgreen",
-                    retired = "orange", archived = "red", dormant = "blue", questioning = "blue",
-                    superseded = "blue",
-                    stop("invalid stage: ", stage))
+  if (is.null(color)) {
+    color <- switch(
+      stage,
+      stable       = "brightgreen",
+      deprecated   = "orange",
+      superseded   = "blue",
+      experimental = "orange",
+      stop("invalid stage: ", stage)
+    )
+  }
   badge_custom("lifecycle", stage, color, url)
 }
 
