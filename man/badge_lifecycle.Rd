@@ -19,5 +19,5 @@ badge in markdown syntax
 lifecycle badge
 }
 \author{
-Gregor de Cillia
+Gregor de Cillia, Waldir Leoncio
 }
