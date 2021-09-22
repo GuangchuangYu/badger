@@ -18,6 +18,12 @@ currentGitHubRef <- function(ref) {
 	url <- url[grepl("github", url, ignore.case = TRUE)][[1]]
 
 	ref <- gsub("https://github.com/", "", url)
+
+	# Removes eventual trailing slash on URL to fix svg filename
+  if (substring(ref, nchar(ref)) == "/") {
+    ref <- gsub(".$", "", ref)
+  }
+
 	ref
 }
 
