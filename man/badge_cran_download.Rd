@@ -7,7 +7,7 @@
 badge_cran_download(
   pkg = NULL,
   type = c("last-month", "last-week", "grand-total"),
-  color = "green"
+  color = NULL
 )
 }
 \arguments{

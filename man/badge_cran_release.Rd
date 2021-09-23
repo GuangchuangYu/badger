@@ -4,7 +4,7 @@
 \alias{badge_cran_release}
 \title{badge_cran_release}
 \usage{
-badge_cran_release(pkg = NULL, color)
+badge_cran_release(pkg = NULL, color = NULL)
 }
 \arguments{
 \item{pkg}{package. If \code{NULL} (the default) the package
