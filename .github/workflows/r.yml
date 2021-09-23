@@ -1,0 +1,110 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+#
+# See https://github.com/r-lib/actions/tree/master/examples#readme for
+# additional example workflows available for the R community.
+
+# ======================================================== #
+# Determines when the action is triggered                  #
+# ======================================================== #
+
+on: [push, pull_request]
+
+name: R-CMD-check
+
+# ======================================================== #
+# Determine actions to take                                #
+# ======================================================== #
+
+jobs:
+  R-CMD-check:
+    runs-on: ${{ matrix.config.os }}
+    name: ${{ matrix.config.os }} (R ${{ matrix.config.r }})
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: windows-latest, r: 'release'}
+          - {os: macOS-latest, r: 'release'}
+          - {os: ubuntu-latest, r: 'release'}
+          - {os: ubuntu-latest, r: 'devel'}
+    steps:
+
+        # Checking out code -------------------------------------- #
+        - name: Checking out the repository
+          uses: actions/checkout@v2
+
+        # Setting up environment --------------------------------- #
+        - name: Setting up R ${{ matrix.config.r }} on ${{ matrix.config.os }}
+          uses: r-lib/actions/setup-r@v1
+          with:
+            r-version: ${{ matrix.config.r }}
+
+        # Installing Pandoc -------------------------------------- #
+        - name: Installing Pandoc
+          uses: r-lib/actions/setup-pandoc@v1
+
+        # Querying dependencies ---------------------------------- #
+        - name: Querying dependencies
+          run: |
+            install.packages('remotes')
+            saveRDS(
+              remotes::dev_package_deps(dependencies = TRUE),
+              ".github/depends.Rds",
+              version = 2
+            )
+            writeLines(
+              sprintf("R-%i.%i", getRversion()$major, getRversion()$minor),
+              ".github/R-version"
+            )
+          shell: Rscript {0}
+
+        # Restoring R package cache ------------------------------ #
+        - name: Restoring R package cache
+          uses: actions/cache@v2
+          with:
+            path: ${{ env.R_LIBS_USER }}
+            key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}>
+              -1-${{ hashFiles('.github/depends.Rds') }}
+            restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+
+        # Installing system and package dependencies ------------- #
+        - name: Installing Linux dependencies
+          if: runner.os == 'Linux'
+          run: |
+            while read -r cmd
+            do
+              eval sudo $cmd
+            done < <(Rscript -e 'writeLines(
+              remotes::system_requirements("ubuntu", "20.04")
+            )')
+        - name: Install macOS dependencies
+          if: runner.os == 'macOS'
+          run: brew install xquartz --cask
+        - name: Installing package dependencies
+          run: |
+            remotes::install_deps(dependencies = TRUE)
+            remotes::install_cran("rcmdcheck")
+          shell: Rscript {0}
+
+        # Checking package --------------------------------------- #
+        - name: Checking package
+          env:
+            _R_CHECK_CRAN_INCOMING_REMOTE_: false
+          run: |
+            options(crayon.enabled = TRUE)
+            rcmdcheck::rcmdcheck(
+              args = c("--no-manual", "--as-cran"),
+              error_on = "warning", check_dir = "check"
+            )
+          shell: Rscript {0}
+
+        # Uploading check results -------------------------------- #
+        - name: Uploading check results
+          if: failure()
+          uses: actions/upload-artifact@main
+          with:
+            name: ${{ runner.os }}-r${{ matrix.config.r }}-results
+            path: check
