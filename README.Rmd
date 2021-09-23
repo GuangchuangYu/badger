@@ -18,7 +18,8 @@ cat(
 	badge_cran_release("badger", "green"),
 	badge_cran_download("badger", "grand-total", "green"),
 	badge_cran_download("badger", "last-month", "green"),
-	badge_cran_download("badger", "last-week", "green")
+	badge_cran_download("badger", "last-week", "green"),
+	badge_github_actions()
 )
 ```
 
@@ -60,7 +61,7 @@ devtools::install_github("GuangchuangYu/badger")
 	- badge: `r badge_bioc_release("ggtree", "green")`
 + release version (CRAN)
 	- syntax: `` ``r ''`r badge_cran("badger", "orange")` ``
-	- badge: `r badge_cran_release("badger", "orange")` 
+	- badge: `r badge_cran_release("badger", "orange")`
 + devel version
 	- syntax: `` ``r ''`r badge_devel("guangchuangyu/ggtree", "blue")` ``
 	- badge: `r badge_devel("guangchuangyu/ggtree", "blue")`
@@ -78,9 +79,9 @@ devtools::install_github("GuangchuangYu/badger")
 + Monthly download of distinct IPs
 	- syntax: `` ``r ''`r badge_bioc_download("clusterProfiler", "month", "green")` ``
 	- badge: `r badge_bioc_download("clusterProfiler", "month", "green")`
-	
+
 ### Download stats for CRAN
-	
+
 + Total downloads
 	- syntax: `` ``r ''`r badge_cran_download("badger", "grand-total", "blue")` ``
 	- badge: `r badge_cran_download("badger", "grand-total", "blue")`
@@ -111,7 +112,7 @@ devtools::install_github("GuangchuangYu/badger")
   "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")` ``
 + badge: `r badge_custom("1st most cited paper", "in OMICS", "blue",
   "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")`
-  
+
 ### Development
 
 + Lifecycle
@@ -147,7 +148,7 @@ devtools::install_github("GuangchuangYu/badger")
 + CodeFactor code quality
   - syntax: `` ``r ''`r badge_codefactor("rossellhayes/ipa")` ``
   - badge: `r badge_codefactor("rossellhayes/ipa")`
-	
+
 ## :hammer: Related Tools
 
 + [hexSticker](https://github.com/GuangchuangYu/hexSticker): create hexagon sticker in R
