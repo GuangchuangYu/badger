@@ -303,9 +303,10 @@ badge_code_size <- function(ref = NULL) {
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_cran_release <- function(pkg = NULL, color) {
+badge_cran_release <- function(pkg = NULL, color = NULL) {
   pkg <- currentPackageName(pkg)
-  svg <- paste0("https://www.r-pkg.org/badges/version/", pkg, "?color=", color)
+  svg <- paste0("https://www.r-pkg.org/badges/version/", pkg)
+  if (!is.null(color)) {svg <- paste0(svg, "?color=", color)}
   url <- paste0("https://cran.r-project.org/package=", pkg)
   placeholder <- "CRAN link"
   paste0("[![](", svg, ")](", url, ")")
@@ -372,10 +373,11 @@ badge_codecov <- function(ref = NULL, token = NULL, branch = NULL) {
 ##' @export
 ##' @author Gregor de Cillia
 badge_cran_download <- function(pkg = NULL, type = c("last-month", "last-week", "grand-total"),
-                                color = "green") {
+                                color = NULL) {
   pkg <- currentPackageName(pkg)
 	type <- match.arg(type)
-  svg <- paste0("http://cranlogs.r-pkg.org/badges/", type, "/", pkg, "?color=", color)
+  svg <- paste0("http://cranlogs.r-pkg.org/badges/", type, "/", pkg)
+  if (!is.null(color)) {svg <- paste0(svg, "?color=", color)}
   url <- paste0("https://cran.r-project.org/package=", pkg)
   placeholder <- "CRAN link"
   paste0("[![](", svg, ")](", url, ")")
