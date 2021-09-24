@@ -24,6 +24,5 @@ URL: https://github.com/GuangchuangYu/badger
 BugReports: https://github.com/GuangchuangYu/badger/issues
 Encoding: UTF-8
 RoxygenNote: 7.1.2
-Suggests: 
+Suggests:
     testthat (>= 2.0.0)
-Config/testthat/edition: 2
