@@ -2,16 +2,9 @@ context("Basic badge output")
 
 test_that("GitHub badges output as expected", {
   expect_error(badge_github_version())
-  expect_equal(
+  expect_match(
     badge_github_version("GuangchuangYu/badger", color="blue"),
-    assembleBadgeOutput(
-      paste0(
-        "img.shields.io/badge/devel%20version-",
-        packageVersion("badger"),
-        "-blue.svg"
-      ),
-      "github.com/GuangchuangYu/badger"
-    )
+    "img.shields.io/badge/devel%20version-\\d"
   )
   expect_equal(
     badge_github_actions("GuangchuangYu/badger"),
@@ -23,16 +16,9 @@ test_that("GitHub badges output as expected", {
 })
 
 test_that("Bioconductor badges work as expected", {
-  expect_equal(
+  expect_match(
     badge_bioc_release("BiocGenerics", color="green"),
-    assembleBadgeOutput(
-      paste0(
-        "img.shields.io/badge/release%20version-",
-        packageVersion("BiocGenerics"),
-        "-green.svg"
-      ),
-      "www.bioconductor.org/packages/BiocGenerics",
-    )
+    "img.shields.io/badge/release%20version-\\d",
   )
   expect_equal(
     badge_bioc_download("BiocGenerics", "total", "pink"),
@@ -117,17 +103,17 @@ test_that("Other badges output as expected", {
     )
   )
   expect_equal(
-    badge_last_commit("GuangchuangYu/badger"),
+    badge_last_commit("GuangchuangYu/badger", "master"),
     assembleBadgeOutput(
       "img.shields.io/github/last-commit/GuangchuangYu/badger.svg",
       "github.com/GuangchuangYu/badger/commits/master"
     )
   )
   expect_equal(
-    badge_travis("GuangchuangYu/badger"),
+    badge_travis("tmatta/lsasim", branch="master"),
     assembleBadgeOutput(
-      "travis-ci.org/GuangchuangYu/badger.svg?branch=master",
-      "travis-ci.org/GuangchuangYu/badger"
+      "travis-ci.org/tmatta/lsasim.svg?branch=master",
+      "travis-ci.org/tmatta/lsasim"
     )
   )
   expect_equal(
@@ -138,14 +124,14 @@ test_that("Other badges output as expected", {
     )
   )
   expect_equal(
-    badge_coveralls("GuangchuangYu/badger"),
+    badge_coveralls("GuangchuangYu/badger", "master"),
     assembleBadgeOutput(
       "coveralls.io/repos/github/GuangchuangYu/badger/badge.svg?branch=master",
       "coveralls.io/github/GuangchuangYu/badger"
     )
   )
   expect_equal(
-    badge_codecov("GuangchuangYu/badger"),
+    badge_codecov("GuangchuangYu/badger", branch="master"),
     assembleBadgeOutput(
       "codecov.io/gh/GuangchuangYu/badger/branch/master/graph/badge.svg",
       "codecov.io/gh/GuangchuangYu/badger"
