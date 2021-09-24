@@ -87,7 +87,7 @@ jobs:
           if: matrix.config.r == 'devel'
           run: |
             install.packages("BiocManager")
-            BiocManager::install(version == "develop")
+            BiocManager::install(version = "devel")
           shell: Rscript {0}
         - name: Installing package dependencies
           run: |
