@@ -15,28 +15,30 @@ test_that("GitHub badges output as expected", {
   )
 })
 
-test_that("Bioconductor badges work as expected", {
-  expect_match(
-    badge_bioc_release("BiocGenerics", color="green"),
-    "img.shields.io/badge/release%20version-\\d",
-  )
-  expect_equal(
-    badge_bioc_download("BiocGenerics", "total", "pink"),
-    assembleBadgeOutput(
-      "img.shields.io/badge/download-2541477/total-pink.svg",
-      "bioconductor.org/packages/stats/bioc/BiocGenerics"
+if (R.Version()$status == "") {
+  test_that("Bioconductor badges work as expected", {
+    expect_match(
+      badge_bioc_release("BiocGenerics", color="green"),
+      "img.shields.io/badge/release%20version-\\d",
     )
-  )
-  expect_equal(
-    badge_bioc_download_rank("BiocGenerics"),
-    assembleBadgeOutput(
-      "www.bioconductor.org/shields/downloads/release/BiocGenerics.svg",
-      "bioconductor.org/packages/stats/bioc/BiocGenerics",
-      "download",
-      https=FALSE
+    expect_equal(
+      badge_bioc_download("BiocGenerics", "total", "pink"),
+      assembleBadgeOutput(
+        "img.shields.io/badge/download-2541477/total-pink.svg",
+        "bioconductor.org/packages/stats/bioc/BiocGenerics"
+      )
     )
-  )
-})
+    expect_equal(
+      badge_bioc_download_rank("BiocGenerics"),
+      assembleBadgeOutput(
+        "www.bioconductor.org/shields/downloads/release/BiocGenerics.svg",
+        "bioconductor.org/packages/stats/bioc/BiocGenerics",
+        "download",
+        https=FALSE
+      )
+    )
+  })
+}
 
 test_that("CRAN badges output as expected", {
   expect_equal(
