@@ -83,6 +83,10 @@ jobs:
         - name: Install macOS dependencies
           if: runner.os == 'macOS'
           run: brew install xquartz --cask
+        - name: Installing devel BiocManager
+          if: matrix.config.r == 'devel'
+          run: BiocManager::install(version == "develop")
+          shell: Rscript {0}
         - name: Installing package dependencies
           run: |
             remotes::install_deps(dependencies = TRUE)
