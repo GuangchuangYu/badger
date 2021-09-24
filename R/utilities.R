@@ -31,3 +31,13 @@ defaultBranch <- function(branch) {
   if (!is.null(branch)) {return(branch)}
   usethis::git_branch_default()
 }
+
+assembleBadgeOutput <- function(img_link, target_link, alt_text="", https=TRUE) {
+  # Adds common elements to badge output
+  protocol <- ifelse(https, "https", "http")
+  image_url <- paste0(
+    "[![", alt_text, "](", protocol, "://", img_link, ")]"
+  )
+  link_url <- paste0("(https://", target_link, ")")
+  return(paste0(image_url, link_url))
+}
