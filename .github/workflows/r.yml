@@ -85,7 +85,9 @@ jobs:
           run: brew install xquartz --cask
         - name: Installing devel BiocManager
           if: matrix.config.r == 'devel'
-          run: BiocManager::install(version == "develop")
+          run: |
+            install.packages("BiocManager")
+            BiocManager::install(version == "develop")
           shell: Rscript {0}
         - name: Installing package dependencies
           run: |
