@@ -1,6 +1,6 @@
 Package: badger
 Title: Badge for R Package
-Version: 0.1.0.992
+Version: 0.1.0.993
 Authors@R: c(
         person("Guangchuang", "Yu",          email = "guangchuangyu@gmail.com",    role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781")),
         person("Gregor", "de Cillia",        email = "de.cillia.gregor@gmail.com", role = "ctb"),
@@ -18,11 +18,11 @@ Imports:
     rvcheck,
     desc,
     usethis (>= 2.0.0)
+Suggests:
+    testthat (>= 2.0.0)
 License: Artistic-2.0
 ByteCompile: true
 URL: https://github.com/GuangchuangYu/badger
 BugReports: https://github.com/GuangchuangYu/badger/issues
 Encoding: UTF-8
 RoxygenNote: 7.1.2
-Suggests:
-    testthat (>= 2.0.0)
