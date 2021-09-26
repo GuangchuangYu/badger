@@ -21,13 +21,13 @@ if (R.Version()$status == "") {
       badge_bioc_release("BiocGenerics", color="green"),
       "img.shields.io/badge/release%20version-\\d",
     )
-    expect_equal(
-      badge_bioc_download("BiocGenerics", "total", "pink"),
-      assembleBadgeOutput(
-        "img.shields.io/badge/download-2541477/total-pink.svg",
-        "bioconductor.org/packages/stats/bioc/BiocGenerics"
-      )
-    )
+    ## expect_equal(
+    ##   badge_bioc_download("BiocGenerics", "total", "pink"),
+    ##   assembleBadgeOutput(
+    ##     "img.shields.io/badge/download-2541477/total-pink.svg", #not static value
+    ##     "bioconductor.org/packages/stats/bioc/BiocGenerics"
+    ##   )
+    ## )
     expect_equal(
       badge_bioc_download_rank("BiocGenerics"),
       assembleBadgeOutput(
