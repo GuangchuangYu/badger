@@ -104,6 +104,7 @@ test_that("Other badges output as expected", {
       "lifecycle.r-lib.org/articles/stages.html#experimental"
     )
   )
+
   expect_equal(
     badge_last_commit("GuangchuangYu/badger", "master"),
     assembleBadgeOutput(
@@ -135,8 +136,8 @@ test_that("Other badges output as expected", {
   expect_equal(
     badge_codecov("GuangchuangYu/badger", branch="master"),
     assembleBadgeOutput(
-      "codecov.io/gh/GuangchuangYu/badger/branch/master/graph/badge.svg",
-      "codecov.io/gh/GuangchuangYu/badger"
+      "app.codecov.io/gh/GuangchuangYu/badger/branch/master/graph/badge.svg",
+      "app.codecov.io/gh/GuangchuangYu/badger"
     )
   )
   expect_equal(

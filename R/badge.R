@@ -352,7 +352,7 @@ badge_codecov <- function(ref = NULL, token = NULL, branch = NULL) {
   ref    <- currentGitHubRef(ref)
   branch <- defaultBranch(branch)
   svg    <- paste0(
-    "https://codecov.io/gh/", ref, "/branch/", branch, "/graph/badge.svg"
+    "https://app.codecov.io/gh/", ref, "/branch/", branch, "/graph/badge.svg"
   )
   if (!is.null(token)) {
     svg <- paste0(svg, "?token=", token)
@@ -473,4 +473,3 @@ badge_codefactor <- function(ref = NULL) {
   svg <- paste0(url, "/badge")
   paste0("[![CodeFactor](", svg, ")](", url, ")")
 }
-
