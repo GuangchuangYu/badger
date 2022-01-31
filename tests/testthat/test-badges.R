@@ -105,6 +105,40 @@ test_that("Other badges output as expected", {
     )
   )
   expect_equal(
+    badge_repostatus("concept"),
+    "[![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)"
+  )
+  expect_equal(
+    badge_repostatus("wip"),
+    "[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)"
+  )
+  expect_equal(
+    badge_repostatus("suspended"),
+    "[![Project Status: Suspended – Initial development has started, but there has not yet been a stable, usable release; work has been stopped for the time being but the author(s) intend on resuming work.](https://www.repostatus.org/badges/latest/suspended.svg)](https://www.repostatus.org/#suspended)"
+  )
+  expect_equal(
+    badge_repostatus("abandoned"),
+    "[![Project Status: Abandoned – Initial development has started, but there has not yet been a stable, usable release; the project has been abandoned and the author(s) do not intend on continuing development.](https://www.repostatus.org/badges/latest/abandoned.svg)](https://www.repostatus.org/#abandoned)"
+  )
+  expect_equal(
+    badge_repostatus("active"),
+    "[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)"
+  )
+  expect_equal(
+    badge_repostatus("inactive"),
+    "[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)"
+  )
+  expect_equal(
+    badge_repostatus("unsupported"),
+    "[![Project Status: Unsupported – The project has reached a stable, usable state but the author(s) have ceased all work on it. A new maintainer may be desired.](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)"
+  )
+  expect_equal(
+    suppressWarnings(badge_repostatus("moved")),
+    "[![Project Status: Moved to http://example.com – The project has been moved to a new location, and the version at that location should be considered authoritative.](https://www.repostatus.org/badges/latest/moved.svg)](https://www.repostatus.org/#moved) to [http://example.com](http://example.com)"
+  )
+  expect_warning(badge_repostatus("moved")
+  )
+  expect_equal(
     badge_last_commit("GuangchuangYu/badger", "master"),
     assembleBadgeOutput(
       "img.shields.io/github/last-commit/GuangchuangYu/badger.svg",
