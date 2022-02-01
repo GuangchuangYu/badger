@@ -116,8 +116,11 @@ devtools::install_github("GuangchuangYu/badger")
 ### Development
 
 + Lifecycle
-	- syntax: `` ``r ''`r badge_lifecycle("maturing", "blue")` ``
-	- badge: `r badge_lifecycle("maturing", "blue")`
+	- syntax: `` ``r ''`r badge_lifecycle("stable")` ``
+	- badge: `r badge_lifecycle("stable")`
++ Project status
+	- syntax: `` ``r ''`r badge_repostatus("Active")` ``
+	- badge: `r badge_repostatus("Active")`
 + License
   - syntax: `` ``r ''`r badge_license("Artistic-2.0")` ``
   - badge: `r badge_license("Artistic-2.0")`
@@ -152,4 +155,3 @@ devtools::install_github("GuangchuangYu/badger")
 ## :hammer: Related Tools
 
 + [hexSticker](https://github.com/GuangchuangYu/hexSticker): create hexagon sticker in R
-
