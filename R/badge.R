@@ -231,6 +231,47 @@ badge_lifecycle <- function(stage = "experimental", color = NULL) {
   badge_custom("lifecycle", stage, color, url)
 }
 
+##' repostatus.org badge
+##'
+##'
+##' @title badge_repostatus
+##' @param status project status (Concept, WIP, Suspended, Abandoned, Active,
+##' Inactive, Unsupported, Moved). See
+##' \href{https://www.repostatus.org/lifecycle}{https://www.repostatus.org/lifecycle}
+##' for more details.
+##' @param alt Alternative text
+##' @return badge in markdown syntax
+##' @export
+##' @author Waldir Leoncio
+badge_repostatus <- function(status, alt = NULL) {
+  status <- tolower(status)
+  svg <- paste0("https://www.repostatus.org/badges/latest/", status, ".svg")
+  url <- paste0("https://www.repostatus.org/#", status)
+  if (is.null(alt)) {
+    alt <- switch(
+      status,
+      concept     = "Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.",
+      wip         = "WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.",
+      suspended   = "Suspended – Initial development has started, but there has not yet been a stable, usable release; work has been stopped for the time being but the author(s) intend on resuming work.",
+      abandoned   = "Abandoned – Initial development has started, but there has not yet been a stable, usable release; the project has been abandoned and the author(s) do not intend on continuing development.",
+      active      = "Active – The project has reached a stable, usable state and is being actively developed.",
+      inactive    = "Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.",
+      unsupported = "Unsupported – The project has reached a stable, usable state but the author(s) have ceased all work on it. A new maintainer may be desired.",
+      moved       = "Moved to http://example.com – The project has been moved to a new location, and the version at that location should be considered authoritative.",
+      stop("invalid status: ", status)
+    )
+    alt <- paste("Project Status:", alt)
+  }
+  badge_out <- paste0("[![", alt, "](", svg, ")](", url, ")")
+  if (status == "moved") {
+    warning("Please remember to replace 'http://example.com' with the new URL")
+    paste(badge_out, "to [http://example.com](http://example.com)")
+  } else {
+    paste(badge_out)
+  }
+}
+
+
 ##' last commit badge
 ##'
 ##'
