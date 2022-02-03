@@ -1,5 +1,6 @@
-# badger 0.1.0.993
+# badger 0.1.1
 
++ add `badge_repostatus()` (2022-02-01, Tue, @wleoncio #36)
 + implement unit test framework (2021-09-24, Fri, @wleoncio, #32)
 + allow `color = NULL` in `badge_cran_release()` and `badge_cran_download()` (2021-09-24, Fri, @rossellhayes, #31)
 + Add CI workflow (2021-09-24, Fri, @wleoncio, #30)
