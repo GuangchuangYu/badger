@@ -15,7 +15,8 @@ currentGitHubRef <- function(ref) {
   }
 
   url <- unlist(strsplit(url, ",\\s*"))
-  url <- url[grepl("github", url, ignore.case = TRUE)][[1]]
+  ## #35
+  url <- url[grepl("github.com", url, ignore.case = TRUE)][[1]]
 
   ref <- gsub("https://github.com/", "", url)
 

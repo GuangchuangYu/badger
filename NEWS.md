@@ -1,3 +1,7 @@
+# badger 0.2.0
+
++ now `currentGitHubRef()` supports URL combined github.com and github.io (2022-03-28, Mon, #35)
+
 # badger 0.1.1
 
 + add `badge_repostatus()` (2022-02-01, Tue, @wleoncio #36)
