@@ -60,7 +60,7 @@ devtools::install_github("GuangchuangYu/badger")
 	- syntax: `` ``r ''`r badge_bioc_release("ggtree", "green")` ``
 	- badge: `r badge_bioc_release("ggtree", "green")`
 + release version (CRAN)
-	- syntax: `` ``r ''`r badge_cran("badger", "orange")` ``
+	- syntax: `` ``r ''`r badge_cran_release("badger", "orange")` ``
 	- badge: `r badge_cran_release("badger", "orange")`
 + devel version
 	- syntax: `` ``r ''`r badge_devel("guangchuangyu/ggtree", "blue")` ``
