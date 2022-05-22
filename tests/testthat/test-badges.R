@@ -79,13 +79,13 @@ test_that("Other badges output as expected", {
     badge_custom("a", "b", "red"),
     "![](https://img.shields.io/badge/a-b-red.svg)"
   )
-  expect_equal(
-    badge_altmetric("2788597", "blue"),
-    assembleBadgeOutput(
-      "img.shields.io/badge/Altmetric-30-blue.svg",
-      "www.altmetric.com/details/2788597"
-    )
-  )
+#  expect_equal(
+#    badge_altmetric("2788597", "blue"),
+#    assembleBadgeOutput(
+#      "img.shields.io/badge/Altmetric-30-blue.svg",
+#      "www.altmetric.com/details/2788597"
+#    )
+#  )
   #TODO: create example for badge_sci_citation
   expect_equal(
     badge_sci_citation(

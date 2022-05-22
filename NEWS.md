@@ -1,3 +1,7 @@
+# badger 0.2.1
+
++ comment out test for Altmetric (2022-05-23, Mon)
+
 # badger 0.2.0
 
 + now `currentGitHubRef()` supports URL combined github.com and github.io (2022-03-28, Mon, #35)
