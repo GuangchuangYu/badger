@@ -1,3 +1,7 @@
+# badger 0.2.1.001
+
++ add r-universe badge (2022-07-20, Wed, #42)
+
 # badger 0.2.1
 
 + comment out test for Altmetric (2022-05-23, Mon)
