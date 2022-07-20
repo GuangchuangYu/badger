@@ -514,3 +514,29 @@ badge_codefactor <- function(ref = NULL) {
   svg <- paste0(url, "/badge")
   paste0("[![CodeFactor](", svg, ")](", url, ")")
 }
+
+##' r-universe badge
+##'
+##' @param pkg Package name. If \code{NULL} (the default),
+##'   the name is determined by the URL field in the DESCRIPTION file.
+##' @param user User name. If \code{NULL} (the default),
+##'   the name is determined by the URL field in the DESCRIPTION file.
+##'
+##' @return badge in markdown syntax
+##' @export
+##' @author Alexander Rossell Hayes
+badge_runiverse <- function(pkg = NULL, user = NULL) {
+  if (is.null(pkg) || is.null(user)) {
+    ref <- currentGitHubRef(pkg)
+    ref <- strsplit(ref, "/")[[1]]
+  }
+
+  user <- user %||% ref[[1]]
+  pkg <- pkg %||% ref[[2]]
+
+  paste0(
+    "[![r-universe status badge]",
+    "(https://", user, ".r-universe.dev/badges/", pkg, ")]",
+    "(https://", user, ".r-universe.dev/ui#package:", pkg, ")"
+  )
+}

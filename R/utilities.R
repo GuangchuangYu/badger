@@ -42,3 +42,8 @@ assembleBadgeOutput <- function(img_link, target_link, alt_text="", https=TRUE) 
   link_url <- paste0("(https://", target_link, ")")
   return(paste0(image_url, link_url))
 }
+
+`%||%` <- function(lhs, rhs) {
+  if (is.null(lhs)) return(rhs)
+  lhs
+}
