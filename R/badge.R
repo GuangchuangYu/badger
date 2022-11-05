@@ -450,7 +450,8 @@ badge_dependencies <- function(pkg = NULL) {
 ##' @author Scott Chamberlain (badges API), Maëlle Salmon (function)
 badge_cran_checks <- function(pkg = NULL) {
   pkg <- currentPackageName(pkg)
-  badge <- paste0("https://cranchecks.info/badges/summary/", pkg)
+  # badge <- paste0("https://cranchecks.info/badges/summary/", pkg)
+  badge <- paste0("https://badges.cranchecks.info/summary/", pkg, ".svg")
   url <- paste0("https://cran.r-project.org/web/checks/check_results_",
                 pkg, ".html")
   placeholder <- "CRAN checks"

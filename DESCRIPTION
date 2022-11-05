@@ -1,6 +1,6 @@
 Package: badger
 Title: Badge for R Package
-Version: 0.2.1.001
+Version: 0.2.2
 Authors@R: c(
         person("Guangchuang", "Yu",          email = "guangchuangyu@gmail.com",    role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781")),
         person("Gregor", "de Cillia",        email = "de.cillia.gregor@gmail.com", role = "ctb"),
@@ -25,4 +25,4 @@ ByteCompile: true
 URL: https://github.com/GuangchuangYu/badger
 BugReports: https://github.com/GuangchuangYu/badger/issues
 Encoding: UTF-8
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1

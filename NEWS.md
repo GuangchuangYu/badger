@@ -1,5 +1,6 @@
-# badger 0.2.1.001
+# badger 0.2.2
 
++ update cran checks badge URL (2022-11-05, Sat, #45)
 + add r-universe badge (2022-07-20, Wed, #42)
 
 # badger 0.2.1

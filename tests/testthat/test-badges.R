@@ -59,7 +59,7 @@ test_that("CRAN badges output as expected", {
   expect_equal(
     badge_cran_checks("badger"),
     assembleBadgeOutput(
-      "cranchecks.info/badges/summary/badger",
+      "badges.cranchecks.info/summary/badger.svg",
       "cran.r-project.org/web/checks/check_results_badger.html",
       "CRAN checks"
     )
