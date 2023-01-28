@@ -170,8 +170,8 @@ test_that("Other badges output as expected", {
   expect_equal(
     badge_codecov("GuangchuangYu/badger", branch="master"),
     assembleBadgeOutput(
-      "app.codecov.io/gh/GuangchuangYu/badger/branch/master/graph/badge.svg",
-      "app.codecov.io/gh/GuangchuangYu/badger"
+      "codecov.io/gh/GuangchuangYu/badger/branch/master/graph/badge.svg",
+      "codecov.io/gh/GuangchuangYu/badger"
     )
   )
   expect_equal(
