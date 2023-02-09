@@ -64,6 +64,14 @@ test_that("CRAN badges output as expected", {
       "CRAN checks"
     )
   )
+  expect_equal(
+    badge_cran_checks("badger", worst = TRUE),
+    assembleBadgeOutput(
+      "badges.cranchecks.info/worst/badger.svg",
+      "cran.r-project.org/web/checks/check_results_badger.html",
+      "CRAN checks"
+    )
+  )
 })
 
 test_that("Other badges output as expected", {

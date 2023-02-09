@@ -4,11 +4,14 @@
 \alias{badge_cran_checks}
 \title{badge_cran_checks}
 \usage{
-badge_cran_checks(pkg = NULL)
+badge_cran_checks(pkg = NULL, worst = FALSE)
 }
 \arguments{
 \item{pkg}{package. If \code{NULL} (the default) the package
 is determined via the DESCRIPTION file.}
+
+\item{worst}{logical; if FALSE (default) return "summary" badge. If TRUE,
+return "worst" badge.}
 }
 \value{
 badge in Markdown syntax
