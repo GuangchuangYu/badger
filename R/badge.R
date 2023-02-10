@@ -445,13 +445,20 @@ badge_dependencies <- function(pkg = NULL) {
 ##' @title badge_cran_checks
 ##' @param pkg package. If \code{NULL} (the default) the package
 ##'   is determined via the DESCRIPTION file.
+##' @param worst logical; if FALSE (default) return "summary" badge. If TRUE,
+##'   return "worst" badge.
 ##' @return badge in Markdown syntax
 ##' @export
 ##' @author Scott Chamberlain (badges API), Maëlle Salmon (function)
-badge_cran_checks <- function(pkg = NULL) {
+badge_cran_checks <- function(pkg = NULL, worst = FALSE) {
   pkg <- currentPackageName(pkg)
+  stopifnot(is.logical(worst))
   # badge <- paste0("https://cranchecks.info/badges/summary/", pkg)
-  badge <- paste0("https://badges.cranchecks.info/summary/", pkg, ".svg")
+  badge <- if (worst) {
+    badge <- paste0("https://badges.cranchecks.info/worst/", pkg, ".svg")
+  } else {
+    badge <- paste0("https://badges.cranchecks.info/summary/", pkg, ".svg")
+  }
   url <- paste0("https://cran.r-project.org/web/checks/check_results_",
                 pkg, ".html")
   placeholder <- "CRAN checks"
