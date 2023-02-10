@@ -1,3 +1,11 @@
+# badger 0.2.3.001
+
++ allows `badge_cran_checks` to obtain 'worst' instead of 'summary' (default) badges (2023-02-10, Fri, #49)
+
+# badger 0.2.3
+
++ fixed `badge_codecov` URL (2023-01-28, Sat, #44, #46)
+
 # badger 0.2.2
 
 + update cran checks badge URL (2022-11-05, Sat, #45)
