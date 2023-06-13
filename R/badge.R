@@ -545,6 +545,6 @@ badge_runiverse <- function(pkg = NULL, user = NULL) {
   paste0(
     "[![r-universe status badge]",
     "(https://", user, ".r-universe.dev/badges/", pkg, ")]",
-    "(https://", user, ".r-universe.dev/ui#package:", pkg, ")"
+    "(https://", user, ".r-universe.dev/", pkg, ")"
   )
 }
