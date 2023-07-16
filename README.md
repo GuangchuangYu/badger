@@ -158,7 +158,7 @@ devtools::install_github("GuangchuangYu/badger")
 -   CRAN checks results
     -   syntax: `` `r badge_cran_checks("badger")` ``
     -   badge: [![CRAN
-        checks](https://cranchecks.info/badges/summary/badger)](https://cran.r-project.org/web/checks/check_results_badger.html)
+        checks](https://badges.cranchecks.info/summary/badger.svg)](https://cran.r-project.org/web/checks/check_results_badger.html)
 -   GitHub actions
     -   syntax: `` `r badge_github_actions("rossellhayes/ipa")` ``
     -   badge: [![R build
