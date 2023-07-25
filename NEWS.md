@@ -1,5 +1,8 @@
-# badger 0.2.3.001
+# badger 0.2.3.002
 
++ update codecov badge (2023-07-25, Tue, #53)
++ update cran check badges (#52)
++ update r-universe badge (#51)
 + allows `badge_cran_checks` to obtain 'worst' instead of 'summary' (default) badges (2023-02-10, Fri, #49)
 
 # badger 0.2.3
