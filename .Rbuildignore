@@ -4,3 +4,4 @@ Makefile
 README.Rmd
 README.md
 ^\.github
+^CRAN-SUBMISSION$
