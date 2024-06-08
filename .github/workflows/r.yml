@@ -35,7 +35,7 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
     steps:
         - name: Checking out the repository
-          uses: actions/checkout@v3
+          uses: actions/checkout@v4
 
         - name: Setting up pandoc
           uses: r-lib/actions/setup-pandoc@v2
