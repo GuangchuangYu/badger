@@ -548,3 +548,18 @@ badge_runiverse <- function(pkg = NULL, user = NULL) {
     "(https://", user, ".r-universe.dev/", pkg, ")"
   )
 }
+
+##' GitHub Release badge
+##'
+##' @param ref Reference for a GitHub repository. If \code{NULL} (the default),
+##'   the reference is determined by the URL field in the DESCRIPTION file.
+##'
+##' @return badge in markdown syntax
+##' @export
+##' @author Matt Schuelke
+badge_github_release <- function(ref = NULL) {
+  ref <- currentGitHubRef(ref)
+  svg <- paste0("https://img.shields.io/github/v/release/", ref)
+  url <- paste0("https://github.com/", ref, "/releases")
+  paste0("[![](", svg, ")](", url, ")")
+}

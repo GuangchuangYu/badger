@@ -27,6 +27,7 @@ Other contributors:
   \item Robrecht Cannoodt \email{rcannood@gmail.com} (\href{https://orcid.org/0000-0003-3641-729X}{ORCID}) (rcannood) [contributor]
   \item Alexander Rossell Hayes \email{alexander@rossellhayes.com} (\href{https://orcid.org/0000-0001-9412-0457}{ORCID}) (rossellhayes) [contributor]
   \item Waldir Leoncio \email{w.l.netto@medisin.uio.no} [contributor]
+  \item Matthew Schuelke \email{matt@themadstatter.com} (\href{https://orcid.org/0000-0001-5755-1725}{ORCID}) (the-mad-statter) [contributor]
 }
 
 }

@@ -1,3 +1,8 @@
+# badger 0.2.4
+
++ add github release badge and test (2024-06-07, Fri, #54)
++ update codecov badge test to match merge (2023-07-25, Tue, #53)
+
 # badger 0.2.3.002
 
 + update codecov badge (2023-07-25, Tue, #53)
