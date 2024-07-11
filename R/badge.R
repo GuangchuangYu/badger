@@ -434,7 +434,7 @@ badge_cran_download <- function(pkg = NULL, type = c("last-month", "last-week", 
 ##' @author Dirk Eddelbuettel
 badge_dependencies <- function(pkg = NULL) {
     pkg <- currentPackageName(pkg)
-    badge <- paste0("https://tinyverse.netlify.com/badge/", pkg)
+    badge <- paste0("https://tinyverse.netlify.app/badge/", pkg)
     url <- paste0("https://cran.r-project.org/package=", pkg)
     placeholder <- "Dependencies"
     paste0("[![", placeholder, "](", badge, ")](", url, ")")

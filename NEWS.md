@@ -1,3 +1,7 @@
+# badger 0.2.4.001
+
++ update netlify url (2024-07-11, Thu, #56)
+
 # badger 0.2.4
 
 + add github release badge and test (2024-06-07, Fri, #54)
