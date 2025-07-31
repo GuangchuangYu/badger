@@ -29,8 +29,8 @@ currentGitHubRef <- function(ref) {
 }
 
 defaultBranch <- function(branch) {
-  if (!is.null(branch)) {return(branch)}
-  usethis::git_branch_default()
+  if (!is.null(branch)) return(branch)
+  usethis::git_default_branch()
 }
 
 assembleBadgeOutput <- function(img_link, target_link, alt_text="", https=TRUE) {
