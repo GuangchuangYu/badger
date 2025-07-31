@@ -4,12 +4,14 @@
 \alias{badge_doi}
 \title{badge_doi}
 \usage{
-badge_doi(doi, color)
+badge_doi(doi, color, alt = NULL)
 }
 \arguments{
 \item{doi}{doi}
 
 \item{color}{color}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge
@@ -21,5 +23,5 @@ doi badge
 badge_doi("10.1111/2041-210X.12628", "green")
 }
 \author{
-Guangchuang
+Guangchuang Yu
 }

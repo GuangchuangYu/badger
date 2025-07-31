@@ -4,13 +4,15 @@
 \alias{badge_lifecycle}
 \title{badge_lifcycle}
 \usage{
-badge_lifecycle(stage = "experimental", color = NULL)
+badge_lifecycle(stage = "experimental", color = NULL, alt = NULL)
 }
 \arguments{
 \item{stage}{lifecycle stage See
 \href{https://lifecycle.r-lib.org/articles/stages.html}{https://lifecycle.r-lib.org/articles/stages.html}}
 
 \item{color}{color of the badge. If missing, the color is determined by the stage.}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

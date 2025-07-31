@@ -4,7 +4,7 @@
 \alias{badge_runiverse}
 \title{r-universe badge}
 \usage{
-badge_runiverse(pkg = NULL, user = NULL)
+badge_runiverse(pkg = NULL, user = NULL, alt = "r-universe status badge")
 }
 \arguments{
 \item{pkg}{Package name. If \code{NULL} (the default),
@@ -12,6 +12,8 @@ the name is determined by the URL field in the DESCRIPTION file.}
 
 \item{user}{User name. If \code{NULL} (the default),
 the name is determined by the URL field in the DESCRIPTION file.}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

@@ -5,13 +5,15 @@
 \alias{badge_download_bioc}
 \title{badge_bioc_download_rank}
 \usage{
-badge_bioc_download_rank(pkg = NULL)
+badge_bioc_download_rank(pkg = NULL, alt = "download")
 
-badge_download_bioc(pkg = NULL)
+badge_download_bioc(pkg = NULL, alt = "download")
 }
 \arguments{
 \item{pkg}{package. If \code{NULL} (the default) the package
 is determined via the DESCRIPTION file.}
+
+\item{alt}{Alternative text}
 }
 \value{
 bioc download ranking badge
@@ -20,5 +22,5 @@ bioc download ranking badge
 official Bioconductor download badge (download ranking)
 }
 \author{
-guangchuang yu
+Guangchuang Yu
 }

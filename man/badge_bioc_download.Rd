@@ -4,7 +4,7 @@
 \alias{badge_bioc_download}
 \title{badge_bioc_download}
 \usage{
-badge_bioc_download(pkg = NULL, by, color, type = "distinct")
+badge_bioc_download(pkg = NULL, by, color, type = "distinct", alt = NULL)
 }
 \arguments{
 \item{pkg}{package. If \code{NULL} (the default) the package
@@ -15,6 +15,8 @@ is determined via the DESCRIPTION file.}
 \item{color}{badge color}
 
 \item{type}{one of distinct and total}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

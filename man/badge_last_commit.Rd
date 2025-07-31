@@ -4,7 +4,7 @@
 \alias{badge_last_commit}
 \title{badge_last_commit}
 \usage{
-badge_last_commit(ref = NULL, branch = NULL)
+badge_last_commit(ref = NULL, branch = NULL, alt = NULL)
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL}
@@ -13,6 +13,8 @@ field in the DESCRIPTION file.}
 
 \item{branch}{The GitHub branch. If \code{NULL}
 (the default), the default branch is automatically determined.}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

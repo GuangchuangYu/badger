@@ -4,11 +4,13 @@
 \alias{badge_github_release}
 \title{GitHub Release badge}
 \usage{
-badge_github_release(ref = NULL)
+badge_github_release(ref = NULL, alt = NULL)
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL} (the default),
 the reference is determined by the URL field in the DESCRIPTION file.}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

@@ -4,13 +4,15 @@
 \alias{badge_github_version}
 \title{badge_github_version}
 \usage{
-badge_github_version(pkg = NULL, color)
+badge_github_version(pkg = NULL, color, alt = NULL)
 }
 \arguments{
 \item{pkg}{package. If \code{NULL} (the default) the package
 is determined via the DESCRIPTION file.}
 
 \item{color}{badge color}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

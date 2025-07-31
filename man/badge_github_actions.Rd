@@ -4,7 +4,11 @@
 \alias{badge_github_actions}
 \title{GitHub Actions badge}
 \usage{
-badge_github_actions(ref = NULL, action = "R-CMD-check")
+badge_github_actions(
+  ref = NULL,
+  action = "R-CMD-check",
+  alt = "R build status"
+)
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL} (the default),
@@ -12,6 +16,8 @@ the reference is determined by the URL field in the DESCRIPTION file.}
 
 \item{action}{The name of the GitHub actions workflow. Defaults to
 \code{"R-CMD-CHECK"}.}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

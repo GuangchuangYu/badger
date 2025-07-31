@@ -4,12 +4,14 @@
 \alias{badge_code_size}
 \title{badge_code_size}
 \usage{
-badge_code_size(ref = NULL)
+badge_code_size(ref = NULL, alt = NULL)
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL}
 (the default), the reference is determined by the URL
 field in the DESCRIPTION file.}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

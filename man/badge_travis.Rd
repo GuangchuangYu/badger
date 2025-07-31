@@ -4,7 +4,7 @@
 \alias{badge_travis}
 \title{badge_travis}
 \usage{
-badge_travis(ref = NULL, is_commercial = FALSE, branch = NULL)
+badge_travis(ref = NULL, is_commercial = FALSE, branch = NULL, alt = NULL)
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL}
@@ -16,6 +16,8 @@ https://travis-ci.com}
 
 \item{branch}{The GitHub branch. If \code{NULL}
 (the default), the default branch is automatically determined.}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

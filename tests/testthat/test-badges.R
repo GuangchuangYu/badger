@@ -1,5 +1,7 @@
 context("Basic badge output")
 
+assembleBadgeOutput <- badger:::assembleBadgeOutput
+
 test_that("GitHub badges output as expected", {
   expect_error(badge_github_version())
   expect_match(
@@ -183,10 +185,10 @@ test_that("Other badges output as expected", {
     )
   )
   expect_equal(
-    badge_dependencies("GuangchuangYu/badger"),
+    badge_dependencies("badger"),
     assembleBadgeOutput(
-      "tinyverse.netlify.com/badge/GuangchuangYu/badger",
-      "cran.r-project.org/package=GuangchuangYu/badger",
+      "tinyverse.netlify.app/badge/badger",
+      "cran.r-project.org/package=badger",
       "Dependencies"
     )
   )

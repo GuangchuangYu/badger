@@ -4,13 +4,15 @@
 \alias{badge_cran_release}
 \title{badge_cran_release}
 \usage{
-badge_cran_release(pkg = NULL, color = NULL)
+badge_cran_release(pkg = NULL, color = NULL, alt = NULL)
 }
 \arguments{
 \item{pkg}{package. If \code{NULL} (the default) the package
 is determined via the DESCRIPTION file.}
 
 \item{color}{color of badge}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

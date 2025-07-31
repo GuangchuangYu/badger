@@ -4,13 +4,15 @@
 \alias{badge_devel}
 \title{badge_devel}
 \usage{
-badge_devel(pkg = NULL, color)
+badge_devel(pkg = NULL, color, alt = NULL)
 }
 \arguments{
 \item{pkg}{package. If \code{NULL} (the default) the package
 is determined via the DESCRIPTION file.}
 
 \item{color}{badge color}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

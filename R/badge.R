@@ -5,15 +5,16 @@
 ##' @param pkg package. If \code{NULL} (the default) the package
 ##'   is determined via the DESCRIPTION file.
 ##' @param color badge color
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Guangchuang Yu
 ##' @importFrom rvcheck check_bioc
-badge_bioc_release <- function(pkg = NULL, color) {
+badge_bioc_release <- function(pkg = NULL, color, alt = NULL) {
     pkg <- currentPackageName(pkg)
     v <- check_bioc(pkg)$latest_version
     url <- paste0("https://www.bioconductor.org/packages/", pkg)
-    badge_custom("release version", v, color, url)
+    badge_custom("release version", v, color, url, alt)
 }
 
 
@@ -24,14 +25,15 @@ badge_bioc_release <- function(pkg = NULL, color) {
 ##' @param pkg package. If \code{NULL} (the default) the package
 ##'   is determined via the DESCRIPTION file.
 ##' @param color badge color
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Guangchuang Yu
-badge_github_version <- function(pkg = NULL, color) {
+badge_github_version <- function(pkg = NULL, color, alt = NULL) {
     pkg <- currentGitHubRef(pkg)
     v <- ver_devel(pkg)
     url <- paste0("https://github.com/", pkg)
-    badge_custom("devel version", v, color, url)
+    badge_custom("devel version", v, color, url, alt)
 }
 
 ##' badge of devel version
@@ -50,7 +52,7 @@ badge_devel <- badge_github_version
 ##' @param pkg package. If \code{NULL} (the default) the package
 ##'   is determined via the DESCRIPTION file.
 ##' @return devel version
-##' @author Guangchuang
+##' @author Guangchuang Yu
 ##' @importFrom rvcheck check_github
 ##' @export
 ver_devel <- function (pkg = NULL) {
@@ -70,9 +72,11 @@ ver_devel <- function (pkg = NULL) {
     ##     }
     ## }
     pkg <- currentGitHubRef(pkg)
-    ver <- tryCatch(desc::desc_get_field("Version"), error = function(e) NULL)
-    if (is.null(ver ))
+    if (is.null(pkg)) {
+        ver <- tryCatch(desc::desc_get_field("Version"), error = function(e) NULL)
+    } else {
         ver <- check_github(pkg)$latest_version
+    }
     return(ver)
 }
 
@@ -85,11 +89,12 @@ ver_devel <- function (pkg = NULL) {
 ##' @param by one of total or month
 ##' @param color badge color
 ##' @param type one of distinct and total
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Guangchuang Yu
 ##' @importFrom dlstats bioc_stats
-badge_bioc_download <- function(pkg = NULL, by, color, type="distinct") {
+badge_bioc_download <- function(pkg = NULL, by, color, type="distinct", alt = NULL) {
     pkg <- currentPackageName(pkg)
     type <- match.arg(type, c("distinct", "total"))
     dl <- "Nb_of_downloads"
@@ -108,7 +113,7 @@ badge_bioc_download <- function(pkg = NULL, by, color, type="distinct") {
     res <- paste0(res, "/", by)
 
     url <- paste0("https://bioconductor.org/packages/stats/bioc/", pkg)
-    badge_custom("download", res, color, url)
+    badge_custom("download", res, color, url, alt)
 }
 
 ##' official Bioconductor download badge (download ranking)
@@ -118,14 +123,14 @@ badge_bioc_download <- function(pkg = NULL, by, color, type="distinct") {
 ##' @rdname biocRanking
 ##' @param pkg package. If \code{NULL} (the default) the package
 ##'   is determined via the DESCRIPTION file.
+##' @param alt Alternative text
 ##' @return bioc download ranking badge
 ##' @export
-##' @author guangchuang yu
-badge_bioc_download_rank <- function(pkg = NULL) {
+##' @author Guangchuang Yu
+badge_bioc_download_rank <- function(pkg = NULL, alt="download") {
     pkg <- currentPackageName(pkg)
-    paste0("[![download](http://www.bioconductor.org/shields/downloads/release/",
+    paste0("[![", alt, "](http://www.bioconductor.org/shields/downloads/release/",
            pkg, ".svg)](https://bioconductor.org/packages/stats/bioc/", pkg, ")")
-
 }
 
 ##' @rdname biocRanking
@@ -138,14 +143,15 @@ badge_download_bioc <- badge_bioc_download_rank
 ##' @title badge_doi
 ##' @param doi doi
 ##' @param color color
+##' @param alt Alternative text
 ##' @return badge
-##' @author Guangchuang
+##' @author Guangchuang Yu
 ##' @export
 ##' @examples
 ##' badge_doi("10.1111/2041-210X.12628", "green")
-badge_doi <- function(doi, color) {
-    url <- paste0("https://doi.org/",doi)
-    badge_custom("doi", doi, color, url)
+badge_doi <- function(doi, color, alt = NULL) {
+    url <- paste0("https://doi.org/", doi)
+    badge_custom("doi", doi, color, url, alt)
 }
 
 ##' custom badge
@@ -156,20 +162,24 @@ badge_doi <- function(doi, color) {
 ##' @param y field 2
 ##' @param color color
 ##' @param url optional url
+##' @param alt Alternative text
 ##' @return customize badge
 ##' @author Guangchuang Yu
 ##' @export
-badge_custom <- function(x, y, color, url=NULL) {
+badge_custom <- function(x, y, color, url=NULL, alt = NULL) {
     x <- gsub(" ", "%20", x)
     y <- gsub(" ", "%20", y)
     x <- gsub('-', '--', x)
     y <- gsub('-', '--', y)
-    badge <- paste0("![](https://img.shields.io/badge/", x, "-", y, "-", color, ".svg)")
+    badge <- paste0("![", alt, "](https://img.shields.io/badge/", 
+                    x, "-", y, "-", color, ".svg)")
+
     if (is.null(url))
         return(badge)
 
     paste0("[", badge, "](", url, ")")
 }
+
 
 ##' altmetric badge
 ##'
@@ -177,18 +187,19 @@ badge_custom <- function(x, y, color, url=NULL) {
 ##' @title badge_altmetric
 ##' @param id altmetric id
 ##' @param color color of badge
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
-##' @author Guangchuang
+##' @author Guangchuang Yu
 ##' @examples
 ##' \dontrun{
 ##' badge_altmetric("2788597", "blue")
 ##' }
 ##' @export
-badge_altmetric <- function(id, color) {
+badge_altmetric <- function(id, color, alt = NULL) {
     url <- paste0("https://www.altmetric.com/details/", id)
     x <- readLines(url)
     score <- gsub("^.*score=(\\d+)\\D+.*$", '\\1', x[grep("style=donut&score=", x)])
-    badge_custom("Altmetric", score, color, url)
+    badge_custom("Altmetric", score, color, url, alt)
 }
 
 ##' SCI citation badge
@@ -197,13 +208,14 @@ badge_altmetric <- function(id, color) {
 ##' @title badge_sci_citation
 ##' @param url Web of Science url
 ##' @param color color of badge
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
-##' @author Guangchuang
+##' @author Guangchuang Yu
 ##' @export
-badge_sci_citation <- function(url, color) {
+badge_sci_citation <- function(url, color, alt = NULL) {
     x <- suppressWarnings(readLines(url))
     cites <- sub("\\D+(\\d+)\\D+", "\\1", x[grep("Times Cited$", x)])
-    badge_custom("cited in Web of Science Core Collection", cites, color, url)
+    badge_custom("cited in Web of Science Core Collection", cites, color, url, alt)
 }
 
 ##' lifecycle badge
@@ -213,10 +225,11 @@ badge_sci_citation <- function(url, color) {
 ##' @param stage lifecycle stage See
 ##'   \href{https://lifecycle.r-lib.org/articles/stages.html}{https://lifecycle.r-lib.org/articles/stages.html}
 ##' @param color color of the badge. If missing, the color is determined by the stage.
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia, Waldir Leoncio
-badge_lifecycle <- function(stage = "experimental", color = NULL) {
+badge_lifecycle <- function(stage = "experimental", color = NULL, alt = NULL) {
   url <- paste0("https://lifecycle.r-lib.org/articles/stages.html#", stage)
   if (is.null(color)) {
     color <- switch(
@@ -228,7 +241,7 @@ badge_lifecycle <- function(stage = "experimental", color = NULL) {
       stop("invalid stage: ", stage)
     )
   }
-  badge_custom("lifecycle", stage, color, url)
+  badge_custom("lifecycle", stage, color, url, alt)
 }
 
 ##' repostatus.org badge
@@ -281,15 +294,16 @@ badge_repostatus <- function(status, alt = NULL) {
 ##'   field in the DESCRIPTION file.
 ##' @param branch The GitHub branch. If \code{NULL}
 ##'   (the default), the default branch is automatically determined.
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_last_commit <- function(ref = NULL, branch = NULL) {
+badge_last_commit <- function(ref = NULL, branch = NULL, alt = NULL) {
   ref    <- currentGitHubRef(ref)
   branch <- defaultBranch(branch)
   url    <- paste0("https://github.com/", ref, "/commits/", branch)
   svg    <- paste0("https://img.shields.io/github/last-commit/", ref, ".svg")
-  paste0("[![](", svg, ")](", url, ")")
+  paste0("[![", alt, "](", svg, ")](", url, ")")
 }
 
 ##' travis-ci badge
@@ -303,16 +317,17 @@ badge_last_commit <- function(ref = NULL, branch = NULL) {
 ##'   https://travis-ci.com
 ##' @param branch The GitHub branch. If \code{NULL}
 ##'   (the default), the default branch is automatically determined.
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_travis <- function(ref = NULL, is_commercial = FALSE, branch = NULL) {
+badge_travis <- function(ref = NULL, is_commercial = FALSE, branch = NULL, alt = NULL) {
   ref    <- currentGitHubRef(ref)
   branch <- defaultBranch(branch)
   ext    <- ifelse(is_commercial, "com/", "org/")
   svg    <- paste0("https://travis-ci.", ext, ref, ".svg?branch=", branch)
   url    <- paste0("https://travis-ci.", ext, ref)
-  paste0("[![](", svg, ")](", url, ")")
+  paste0("[![", alt, "](", svg, ")](", url, ")")
 }
 
 ##' badge of GitHub code size
@@ -322,16 +337,17 @@ badge_travis <- function(ref = NULL, is_commercial = FALSE, branch = NULL) {
 ##' @param ref Reference for a GitHub repository. If \code{NULL}
 ##'   (the default), the reference is determined by the URL
 ##'   field in the DESCRIPTION file.
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_code_size <- function(ref = NULL) {
+badge_code_size <- function(ref = NULL, alt = NULL) {
   ref <- currentGitHubRef(ref)
   svg <- paste0("https://img.shields.io/github/languages/code-size/",
                 ref, ".svg")
   url <- paste0("https://github.com/", ref)
   placeholder <- "GitHub code size in bytes"
-  paste0("[![](", svg, ")](", url, ")")
+  paste0("[![", alt, "](", svg, ")](", url, ")")
 }
 
 ##' badge of CRAN version
@@ -341,16 +357,17 @@ badge_code_size <- function(ref = NULL) {
 ##' @param pkg package. If \code{NULL} (the default) the package
 ##'   is determined via the DESCRIPTION file.
 ##' @param color color of badge
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_cran_release <- function(pkg = NULL, color = NULL) {
+badge_cran_release <- function(pkg = NULL, color = NULL, alt = NULL) {
   pkg <- currentPackageName(pkg)
   svg <- paste0("https://www.r-pkg.org/badges/version/", pkg)
   if (!is.null(color)) {svg <- paste0(svg, "?color=", color)}
   url <- paste0("https://cran.r-project.org/package=", pkg)
   placeholder <- "CRAN link"
-  paste0("[![](", svg, ")](", url, ")")
+  paste0("[![", alt, "](", svg, ")](", url, ")")
 }
 
 ##' badge of coveralls code coverage
@@ -362,17 +379,18 @@ badge_cran_release <- function(pkg = NULL, color = NULL) {
 ##'   field in the DESCRIPTION file.
 ##' @param branch The GitHub branch. If \code{NULL}
 ##'   (the default), the default branch is automatically determined.
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_coveralls <- function(ref = NULL, branch = NULL) {
+badge_coveralls <- function(ref = NULL, branch = NULL, alt = NULL) {
   ref    <- currentGitHubRef(ref)
   branch <- defaultBranch(branch)
   svg    <- paste0(
     "https://coveralls.io/repos/github/", ref, "/badge.svg?branch=", branch
   )
   url    <- paste0("https://coveralls.io/github/", ref)
-  paste0("[![](", svg, ")](", url, ")")
+  paste0("[![", alt, "](", svg, ")](", url, ")")
 }
 
 ##' badge of codecov code coverage
@@ -386,10 +404,11 @@ badge_coveralls <- function(ref = NULL, branch = NULL) {
 ##'   It can be obtained at https://codecov.io/gh/USER/REPO/branch/BRANCH/graph/
 ##' @param branch The GitHub branch. If \code{NULL}
 ##'   (the default), the default branch is automatically determined.
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_codecov <- function(ref = NULL, token = NULL, branch = NULL) {
+badge_codecov <- function(ref = NULL, token = NULL, branch = NULL, alt = NULL) {
   ref    <- currentGitHubRef(ref)
   branch <- defaultBranch(branch)
   svg    <- paste0(
@@ -399,7 +418,7 @@ badge_codecov <- function(ref = NULL, token = NULL, branch = NULL) {
     svg <- paste0(svg, "?token=", token)
   }
   url <- paste0("https://app.codecov.io/gh/", ref)
-  paste0("[![](", svg, ")](", url, ")")
+  paste0("[![", alt, "](", svg, ")](", url, ")")
 }
 
 ##' badge of CRAN downloads
@@ -410,18 +429,21 @@ badge_codecov <- function(ref = NULL, token = NULL, branch = NULL) {
 ##'   is determined via the DESCRIPTION file.
 ##' @param type type of stats. \code{last-month}, \code{last-week} or \code{"grand-total"}
 ##' @param color color of badge
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Gregor de Cillia
-badge_cran_download <- function(pkg = NULL, type = c("last-month", "last-week", "grand-total"),
-                                color = NULL) {
+badge_cran_download <- function(pkg = NULL, 
+                                type = c("last-month", "last-week", "grand-total"),
+                                color = NULL, 
+                                alt = NULL) {
   pkg <- currentPackageName(pkg)
 	type <- match.arg(type)
   svg <- paste0("http://cranlogs.r-pkg.org/badges/", type, "/", pkg)
   if (!is.null(color)) {svg <- paste0(svg, "?color=", color)}
   url <- paste0("https://cran.r-project.org/package=", pkg)
   placeholder <- "CRAN link"
-  paste0("[![](", svg, ")](", url, ")")
+  paste0("[![", alt, "](", svg, ")](", url, ")")
 }
 
 ##' dependency badge
@@ -429,15 +451,15 @@ badge_cran_download <- function(pkg = NULL, type = c("last-month", "last-week", 
 ##' @title badge_depedencies
 ##' @param pkg package. If \code{NULL} (the default) the package
 ##'   is determined via the DESCRIPTION file.
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Dirk Eddelbuettel
-badge_dependencies <- function(pkg = NULL) {
+badge_dependencies <- function(pkg = NULL, alt = "Dependencies") {
     pkg <- currentPackageName(pkg)
     badge <- paste0("https://tinyverse.netlify.app/badge/", pkg)
     url <- paste0("https://cran.r-project.org/package=", pkg)
-    placeholder <- "Dependencies"
-    paste0("[![", placeholder, "](", badge, ")](", url, ")")
+    paste0("[![", alt, "](", badge, ")](", url, ")")
 }
 
 ##' CRAN checks badge
@@ -447,10 +469,11 @@ badge_dependencies <- function(pkg = NULL) {
 ##'   is determined via the DESCRIPTION file.
 ##' @param worst logical; if FALSE (default) return "summary" badge. If TRUE,
 ##'   return "worst" badge.
+##' @param alt Alternative text
 ##' @return badge in Markdown syntax
 ##' @export
 ##' @author Scott Chamberlain (badges API), Maëlle Salmon (function)
-badge_cran_checks <- function(pkg = NULL, worst = FALSE) {
+badge_cran_checks <- function(pkg = NULL, worst = FALSE, alt = "CRAN checks") {
   pkg <- currentPackageName(pkg)
   stopifnot(is.logical(worst))
   # badge <- paste0("https://cranchecks.info/badges/summary/", pkg)
@@ -461,8 +484,7 @@ badge_cran_checks <- function(pkg = NULL, worst = FALSE) {
   }
   url <- paste0("https://cran.r-project.org/web/checks/check_results_",
                 pkg, ".html")
-  placeholder <- "CRAN checks"
-  paste0("[![", placeholder, "](", badge, ")](", url, ")")
+  paste0("[![", alt, "](", badge, ")](", url, ")")
 }
 
 #' License badge
@@ -473,11 +495,14 @@ badge_cran_checks <- function(pkg = NULL, worst = FALSE) {
 #' @param url The URL of the LICENSE text. If \code{NULL} (the default), links
 #'   to the CRAN Package License page. This leads to a broken link if package
 #'   uses a non-CRAN compatible license.
-#'
+#' @param alt Alternative text
 #' @return badge in markdown syntax
 #' @export
 #' @author Alexander Rossell Hayes
-badge_license <- function(license = NULL, color = "blue", url = NULL) {
+badge_license <- function(license = NULL, 
+                          color = "blue", 
+                          url = NULL, 
+                          alt = paste("License:", license)) {
   if (is.null(license)) {
     license <- gsub(" \\+.*", "", desc::desc_get_field("License"))
   }
@@ -486,8 +511,7 @@ badge_license <- function(license = NULL, color = "blue", url = NULL) {
   if (is.null(url)) {
     url <- paste0("https://cran.r-project.org/web/licenses/", license)
   }
-  placeholder <- paste("License:", license)
-  paste0("[![", placeholder, "](", badge, ")](", url, ")")
+  paste0("[![", alt, "](", badge, ")](", url, ")")
 }
 
 
@@ -497,15 +521,17 @@ badge_license <- function(license = NULL, color = "blue", url = NULL) {
 ##'   the reference is determined by the URL field in the DESCRIPTION file.
 ##' @param action The name of the GitHub actions workflow. Defaults to
 ##'   \code{"R-CMD-CHECK"}.
-##'
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Alexander Rossell Hayes
-badge_github_actions <- function(ref = NULL, action = "R-CMD-check") {
+badge_github_actions <- function(ref = NULL, 
+                                action = "R-CMD-check", 
+                                alt = "R build status") {
   ref <- currentGitHubRef(ref)
   svg <- paste0("https://github.com/", ref, "/workflows/", action, "/badge.svg")
   url <- paste0("https://github.com/", ref, "/actions")
-  paste0("[![R build status](", svg, ")](", url, ")")
+  paste0("[![", alt, "](", svg, ")](", url, ")")
 }
 
 ##' CodeFactor badge
@@ -514,13 +540,14 @@ badge_github_actions <- function(ref = NULL, action = "R-CMD-check") {
 ##'   the reference is determined by the URL field in the DESCRIPTION file.
 ##'
 ##' @return badge in markdown syntax
+##' @param alt Alternative text
 ##' @export
 ##' @author Alexander Rossell Hayes
-badge_codefactor <- function(ref = NULL) {
+badge_codefactor <- function(ref = NULL, alt = "CodeFactor") {
   ref <- currentGitHubRef(ref)
   url <- paste0("https://www.codefactor.io/repository/github/", ref)
   svg <- paste0(url, "/badge")
-  paste0("[![CodeFactor](", svg, ")](", url, ")")
+  paste0("[![", alt, "](", svg, ")](", url, ")")
 }
 
 ##' r-universe badge
@@ -529,11 +556,11 @@ badge_codefactor <- function(ref = NULL) {
 ##'   the name is determined by the URL field in the DESCRIPTION file.
 ##' @param user User name. If \code{NULL} (the default),
 ##'   the name is determined by the URL field in the DESCRIPTION file.
-##'
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Alexander Rossell Hayes
-badge_runiverse <- function(pkg = NULL, user = NULL) {
+badge_runiverse <- function(pkg = NULL, user = NULL, alt = "r-universe status badge") {
   if (is.null(pkg) || is.null(user)) {
     ref <- currentGitHubRef(pkg)
     ref <- strsplit(ref, "/")[[1]]
@@ -543,7 +570,7 @@ badge_runiverse <- function(pkg = NULL, user = NULL) {
   pkg <- pkg %||% ref[[2]]
 
   paste0(
-    "[![r-universe status badge]",
+    "[![", alt, "]",
     "(https://", user, ".r-universe.dev/badges/", pkg, ")]",
     "(https://", user, ".r-universe.dev/", pkg, ")"
   )
@@ -553,13 +580,13 @@ badge_runiverse <- function(pkg = NULL, user = NULL) {
 ##'
 ##' @param ref Reference for a GitHub repository. If \code{NULL} (the default),
 ##'   the reference is determined by the URL field in the DESCRIPTION file.
-##'
+##' @param alt Alternative text
 ##' @return badge in markdown syntax
 ##' @export
 ##' @author Matt Schuelke
-badge_github_release <- function(ref = NULL) {
+badge_github_release <- function(ref = NULL, alt = NULL) {
   ref <- currentGitHubRef(ref)
   svg <- paste0("https://img.shields.io/github/v/release/", ref)
   url <- paste0("https://github.com/", ref, "/releases")
-  paste0("[![](", svg, ")](", url, ")")
+  paste0("[![", alt, "](", svg, ")](", url, ")")
 }

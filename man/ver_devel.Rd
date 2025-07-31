@@ -17,5 +17,5 @@ devel version
 get devel version number of specific package
 }
 \author{
-Guangchuang
+Guangchuang Yu
 }

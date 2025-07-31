@@ -4,7 +4,7 @@
 \alias{badge_codecov}
 \title{badge_codecov}
 \usage{
-badge_codecov(ref = NULL, token = NULL, branch = NULL)
+badge_codecov(ref = NULL, token = NULL, branch = NULL, alt = NULL)
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL}
@@ -16,6 +16,8 @@ It can be obtained at https://codecov.io/gh/USER/REPO/branch/BRANCH/graph/}
 
 \item{branch}{The GitHub branch. If \code{NULL}
 (the default), the default branch is automatically determined.}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

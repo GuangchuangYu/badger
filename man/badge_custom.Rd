@@ -4,7 +4,7 @@
 \alias{badge_custom}
 \title{badge_custom}
 \usage{
-badge_custom(x, y, color, url = NULL)
+badge_custom(x, y, color, url = NULL, alt = NULL)
 }
 \arguments{
 \item{x}{field 1}
@@ -14,6 +14,8 @@ badge_custom(x, y, color, url = NULL)
 \item{color}{color}
 
 \item{url}{optional url}
+
+\item{alt}{Alternative text}
 }
 \value{
 customize badge

@@ -23,16 +23,18 @@ cat(
 )
 ```
 
-Query information and generate badge for using in README and GitHub Pages.
+
+```{r comment="", echo=FALSE, results='asis'}
+cat(packageDescription('badger')$Description)
+```
+
+
 
 ## :writing_hand: Author
 
-Guangchuang YU <https://guangchuangyu.github.io>
+Guangchuang YU <https://YuLab-SMU.top>
 
 School of Basic Medical Sciences, Southern Medical University
-
-[![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/GuangchuangYu)
-`r badger::badge_custom("follow me on", "WeChat", "green", "https://guangchuangyu.github.io/blog_images/biobabble.jpg")`
 
 
 ## :arrow_double_down: Installation
@@ -66,8 +68,8 @@ devtools::install_github("GuangchuangYu/badger")
   - syntax: `` ``r ''`r badge_runiverse("and", "rossellhayes")` ``
   - badge: `r badge_runiverse("and", "rossellhayes")`
 + devel version
-	- syntax: `` ``r ''`r badge_devel("guangchuangyu/ggtree", "blue")` ``
-	- badge: `r badge_devel("guangchuangyu/ggtree", "blue")`
+	- syntax: `` ``r ''`r badge_devel("YuLab-SMU/ggtree", "blue")` ``
+	- badge: `r badge_devel("YuLab-SMU/ggtree", "blue")`
 
 ### Download stats for bioconductor
 

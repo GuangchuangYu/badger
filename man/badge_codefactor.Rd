@@ -4,11 +4,13 @@
 \alias{badge_codefactor}
 \title{CodeFactor badge}
 \usage{
-badge_codefactor(ref = NULL)
+badge_codefactor(ref = NULL, alt = "CodeFactor")
 }
 \arguments{
 \item{ref}{Reference for a GitHub repository. If \code{NULL} (the default),
 the reference is determined by the URL field in the DESCRIPTION file.}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

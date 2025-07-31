@@ -7,7 +7,8 @@
 badge_cran_download(
   pkg = NULL,
   type = c("last-month", "last-week", "grand-total"),
-  color = NULL
+  color = NULL,
+  alt = NULL
 )
 }
 \arguments{
@@ -17,6 +18,8 @@ is determined via the DESCRIPTION file.}
 \item{type}{type of stats. \code{last-month}, \code{last-week} or \code{"grand-total"}}
 
 \item{color}{color of badge}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

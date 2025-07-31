@@ -4,7 +4,12 @@
 \alias{badge_license}
 \title{License badge}
 \usage{
-badge_license(license = NULL, color = "blue", url = NULL)
+badge_license(
+  license = NULL,
+  color = "blue",
+  url = NULL,
+  alt = paste("License:", license)
+)
 }
 \arguments{
 \item{license}{The license to use. If \code{NULL} (the default), the license
@@ -15,6 +20,8 @@ is determined via the DESCRIPTION file.}
 \item{url}{The URL of the LICENSE text. If \code{NULL} (the default), links
 to the CRAN Package License page. This leads to a broken link if package
 uses a non-CRAN compatible license.}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax

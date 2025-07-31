@@ -14,12 +14,9 @@ Pages.
 
 ## :writing_hand: Author
 
-Guangchuang YU <https://guangchuangyu.github.io>
+Guangchuang YU <https://YuLab-SMU.top>
 
 School of Basic Medical Sciences, Southern Medical University
-
-[![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/GuangchuangYu)
-[![](https://img.shields.io/badge/follow%20me%20on-WeChat-green.svg)](https://guangchuangyu.github.io/blog_images/biobabble.jpg)
 
 ## :arrow_double_down: Installation
 
@@ -45,7 +42,7 @@ devtools::install_github("GuangchuangYu/badger")
 - release version (bioconductor)
   - syntax: `` `r badge_bioc_release("ggtree", "green")` ``
   - badge:
-    [![](https://img.shields.io/badge/release%20version-3.12.0-green.svg)](https://www.bioconductor.org/packages/ggtree)
+    [![](https://img.shields.io/badge/release%20version-3.16.3-green.svg)](https://www.bioconductor.org/packages/ggtree)
 - release version (CRAN)
   - syntax: `` `r badge_cran_release("badger", "orange")` ``
   - badge:
@@ -55,9 +52,9 @@ devtools::install_github("GuangchuangYu/badger")
   - badge: [![r-universe status
     badge](https://rossellhayes.r-universe.dev/badges/and)](https://rossellhayes.r-universe.dev/and)
 - devel version
-  - syntax: `` `r badge_devel("guangchuangyu/ggtree", "blue")` ``
+  - syntax: `` `r badge_devel("YuLab-SMU/ggtree", "blue")` ``
   - badge:
-    [![](https://img.shields.io/badge/devel%20version-0.2.4.001-blue.svg)](https://github.com/guangchuangyu/ggtree)
+    [![](https://img.shields.io/badge/devel%20version-3.17.1.001-blue.svg)](https://github.com/YuLab-SMU/ggtree)
 
 ### Download stats for bioconductor
 
@@ -65,17 +62,17 @@ devtools::install_github("GuangchuangYu/badger")
   - syntax:
     `` `r badge_bioc_download("clusterProfiler", "total", "blue",   "total")` ``
   - badge:
-    [![](https://img.shields.io/badge/download-1456744/total-blue.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+    [![](https://img.shields.io/badge/download-1930981/total-blue.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
 - Total of distinct IPs
   - syntax:
     `` `r badge_bioc_download("clusterProfiler", "total", "yellow")` ``
   - badge:
-    [![](https://img.shields.io/badge/download-824158/total-yellow.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+    [![](https://img.shields.io/badge/download-1105126/total-yellow.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
 - Monthly download of distinct IPs
   - syntax:
     `` `r badge_bioc_download("clusterProfiler", "month", "green")` ``
   - badge:
-    [![](https://img.shields.io/badge/download-17785/month-green.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
+    [![](https://img.shields.io/badge/download-21046/month-green.svg)](https://bioconductor.org/packages/stats/bioc/clusterProfiler)
 
 ### Download stats for CRAN
 
@@ -112,7 +109,7 @@ devtools::install_github("GuangchuangYu/badger")
 ### Customize badge
 
 - syntax:
-  `` `r badge_custom("1st most cited paper", "in OMICS", "blue",   "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")` ``
+  `` `r badge_custom("1st most cited paper", "in OMICS", "blue", "http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi")` ``
 - badge:
   [![](https://img.shields.io/badge/1st%20most%20cited%20paper-in%20OMICS-blue.svg)](http://online.liebertpub.com/action/showMostCitedArticles?journalCode=omi)
 

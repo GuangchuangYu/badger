@@ -4,12 +4,14 @@
 \alias{badge_altmetric}
 \title{badge_altmetric}
 \usage{
-badge_altmetric(id, color)
+badge_altmetric(id, color, alt = NULL)
 }
 \arguments{
 \item{id}{altmetric id}
 
 \item{color}{color of badge}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax
@@ -23,5 +25,5 @@ badge_altmetric("2788597", "blue")
 }
 }
 \author{
-Guangchuang
+Guangchuang Yu
 }

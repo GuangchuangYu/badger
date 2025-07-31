@@ -4,12 +4,14 @@
 \alias{badge_sci_citation}
 \title{badge_sci_citation}
 \usage{
-badge_sci_citation(url, color)
+badge_sci_citation(url, color, alt = NULL)
 }
 \arguments{
 \item{url}{Web of Science url}
 
 \item{color}{color of badge}
+
+\item{alt}{Alternative text}
 }
 \value{
 badge in markdown syntax
@@ -18,5 +20,5 @@ badge in markdown syntax
 SCI citation badge
 }
 \author{
-Guangchuang
+Guangchuang Yu
 }
